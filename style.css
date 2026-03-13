@@ -347,6 +347,8 @@ nav a:hover::after {
 
 /* FULLSCREEN EVENT MODAL */
 
+/* ===== FULL EVENT VIEW ===== */
+
 .modal{
 display:none;
 position:fixed;
@@ -361,8 +363,10 @@ background-attachment:fixed;
 justify-content:center;
 align-items:center;
 z-index:9999;
-overflow:auto;
+padding:40px;
 }
+
+/* dark overlay */
 
 .modal::before{
 content:"";
@@ -371,31 +375,131 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.75);
+background:rgba(0,0,0,0.78);
+backdrop-filter:blur(2px);
 }
+
+/* main event card */
 
 .modal-content{
 position:relative;
-max-width:900px;
+max-width:950px;
 width:90%;
-padding:40px;
-border-radius:14px;
-background:rgba(5,10,30,0.75);
-backdrop-filter:blur(12px);
-text-align:center;
-color:white;
-box-shadow:0 0 40px rgba(0,234,255,0.3);
+padding:45px;
+border-radius:18px;
+
+background:rgba(8,15,40,0.75);
+backdrop-filter:blur(14px);
+
+border:1px solid rgba(0,234,255,0.2);
+
+box-shadow:
+0 0 40px rgba(0,234,255,0.25),
+0 0 120px rgba(0,234,255,0.1);
+
+animation:eventOpen 0.35s ease;
 }
 
+/* open animation */
+
+@keyframes eventOpen{
+from{
+transform:translateY(30px) scale(.95);
+opacity:0;
+}
+to{
+transform:translateY(0) scale(1);
+opacity:1;
+}
+}
+
+/* glowing event title */
+
 .modal-content h2{
-font-size:32px;
+font-size:40px;
+margin-bottom:15px;
+color:#00eaff;
+text-shadow:0 0 15px rgba(0,234,255,.7);
+}
+
+/* event type badge */
+
+.event-type{
+display:inline-block;
+background:#002f35;
+color:#00eaff;
+padding:6px 16px;
+border-radius:25px;
+font-size:12px;
+margin-bottom:15px;
+letter-spacing:1px;
+}
+
+/* layout grid */
+
+.event-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:45px;
+margin-top:25px;
+text-align:left;
+}
+
+/* left column */
+
+.event-left p{
+margin-bottom:18px;
+font-size:15px;
+}
+
+/* rules */
+
+.event-right ul{
+padding-left:20px;
 margin-bottom:20px;
+}
+
+.event-right li{
+margin-bottom:8px;
+}
+
+/* close button */
+
+.close-btn{
+position:absolute;
+top:20px;
+right:25px;
+font-size:28px;
+cursor:pointer;
+color:white;
+transition:.2s;
+}
+
+.close-btn:hover{
 color:#00eaff;
 }
 
-.modal-content p{
-font-size:18px;
-line-height:1.6;
+/* mobile */
+
+@media(max-width:768px){
+
+.modal{
+padding:20px;
+}
+
+.modal-content{
+padding:25px;
+}
+
+.event-grid{
+grid-template-columns:1fr;
+gap:25px;
+}
+
+.modal-content h2{
+font-size:28px;
+}
+
 }
 
 /* CLOSE BUTTON */
@@ -981,4 +1085,14 @@ gap:20px;
 .modal{
 padding:20px;
 overflow:auto;
+}
+
+.card{
+background-size:cover;
+background-position:center;
+height:120px;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
 }
