@@ -347,7 +347,7 @@ nav a:hover::after {
 
 /* FULLSCREEN EVENT MODAL */
 
-.modal {
+.modal{
 display:none;
 position:fixed;
 top:0;
@@ -357,9 +357,11 @@ height:100%;
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
+background-attachment:fixed;
 justify-content:center;
 align-items:center;
 z-index:9999;
+overflow:auto;
 }
 
 .modal::before{
@@ -374,14 +376,15 @@ background:rgba(0,0,0,0.75);
 
 .modal-content{
 position:relative;
-max-width:700px;
+max-width:900px;
 width:90%;
 padding:40px;
-border-radius:12px;
-background:rgba(5,10,30,0.85);
-backdrop-filter:blur(10px);
+border-radius:14px;
+background:rgba(5,10,30,0.75);
+backdrop-filter:blur(12px);
 text-align:center;
 color:white;
+box-shadow:0 0 40px rgba(0,234,255,0.3);
 }
 
 .modal-content h2{
