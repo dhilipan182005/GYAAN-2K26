@@ -349,168 +349,169 @@ nav a:hover::after {
 
 /* ===== FULL EVENT VIEW ===== */
 
-.modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-background-attachment:fixed;
-justify-content:center;
-align-items:center;
-z-index:9999;
-padding:40px;
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 40px;
 }
 
 /* dark overlay */
 
-.modal::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.78);
-backdrop-filter:blur(2px);
+.modal::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(2px);
 }
 
 /* main event card */
 
-.modal-content{
-position:relative;
-max-width:950px;
-width:90%;
-padding:45px;
-border-radius:18px;
+.modal-content {
+    position: relative;
+    max-width: 950px;
+    width: 90%;
+    padding: 45px;
+    border-radius: 18px;
 
-background:rgba(8,15,40,0.75);
-backdrop-filter:blur(14px);
+    background: rgba(8, 15, 40, 0.75);
+    backdrop-filter: blur(14px);
 
-border:1px solid rgba(0,234,255,0.2);
+    border: 1px solid rgba(0, 234, 255, 0.2);
 
-box-shadow:
-0 0 40px rgba(0,234,255,0.25),
-0 0 120px rgba(0,234,255,0.1);
+    box-shadow:
+        0 0 40px rgba(0, 234, 255, 0.25),
+        0 0 120px rgba(0, 234, 255, 0.1);
 
-animation:eventOpen 0.35s ease;
+    animation: eventOpen 0.35s ease;
 }
 
 /* open animation */
 
-@keyframes eventOpen{
-from{
-transform:translateY(30px) scale(.95);
-opacity:0;
-}
-to{
-transform:translateY(0) scale(1);
-opacity:1;
-}
+@keyframes eventOpen {
+    from {
+        transform: translateY(30px) scale(.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
 }
 
 /* glowing event title */
 
-.modal-content h2{
-font-size:40px;
-margin-bottom:15px;
-color:#00eaff;
-text-shadow:0 0 15px rgba(0,234,255,.7);
+.modal-content h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #00eaff;
+    text-shadow: 0 0 15px rgba(0, 234, 255, .7);
 }
 
 /* event type badge */
 
-.event-type{
-display:inline-block;
-background:#002f35;
-color:#00eaff;
-padding:6px 16px;
-border-radius:25px;
-font-size:12px;
-margin-bottom:15px;
-letter-spacing:1px;
+.event-type {
+    display: inline-block;
+    background: #002f35;
+    color: #00eaff;
+    padding: 6px 16px;
+    border-radius: 25px;
+    font-size: 12px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
 }
 
 /* layout grid */
 
-.event-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:45px;
-margin-top:25px;
-text-align:left;
+.event-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    margin-top: 25px;
+    text-align: left;
 }
 
 /* left column */
 
-.event-left p{
-margin-bottom:18px;
-font-size:15px;
+.event-left p {
+    margin-bottom: 18px;
+    font-size: 15px;
 }
 
 /* rules */
 
-.event-right ul{
-padding-left:20px;
-margin-bottom:20px;
+.event-right ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
 }
 
-.event-right li{
-margin-bottom:8px;
+.event-right li {
+    margin-bottom: 8px;
 }
 
 /* close button */
 
-.close-btn{
-position:absolute;
-top:20px;
-right:25px;
-font-size:28px;
-cursor:pointer;
-color:white;
-transition:.2s;
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    transition: .2s;
 }
 
-.close-btn:hover{
-color:#00eaff;
+.close-btn:hover {
+    color: #00eaff;
 }
 
 /* mobile */
 
-@media(max-width:768px){
+@media(max-width:768px) {
 
-.modal{
-padding:20px;
-}
+    .modal {
+        padding: 20px;
+    }
 
-.modal-content{
-padding:25px;
-}
+    .modal-content {
+        padding: 25px;
+    }
 
-.event-grid{
-grid-template-columns:1fr;
-gap:25px;
-}
+    .event-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
 
-.modal-content h2{
-font-size:28px;
-}
+    .modal-content h2 {
+        font-size: 28px;
+    }
 
 }
 
 /* CLOSE BUTTON */
 
-.close-btn{
-position:absolute;
-top:20px;
-right:25px;
-font-size:28px;
-cursor:pointer;
-color:white;
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
 }
 
 .events {
@@ -946,153 +947,265 @@ nav a:hover::after {
 
 /* ================= MOBILE HERO FIX ================= */
 
-@media (max-width:768px){
+@media (max-width:768px) {
 
-.hero{
-padding:60px 20px;
-height:auto;
-}
+    .hero {
+        padding: 60px 20px;
+        height: auto;
+    }
 
-.hero-content{
-max-width:100%;
-padding:0 10px;
-}
+    .hero-content {
+        max-width: 100%;
+        padding: 0 10px;
+    }
 
-.hero h1{
-font-size:40px;
-letter-spacing:2px;
-}
+    .hero h1 {
+        font-size: 40px;
+        letter-spacing: 2px;
+    }
 
-.hero h3{
-font-size:16px;
-}
+    .hero h3 {
+        font-size: 16px;
+    }
 
-.hero p{
-font-size:14px;
-line-height:1.5;
-}
+    .hero p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
 
-.logo{
-width:220px;
-margin-bottom:15px;
-}
+    .logo {
+        width: 220px;
+        margin-bottom: 15px;
+    }
 
-.register-btn{
-padding:10px 22px;
-font-size:14px;
-}
+    .register-btn {
+        padding: 10px 22px;
+        font-size: 14px;
+    }
 
-#countdown{
-font-size:14px;
-margin-top:10px;
-}
+    #countdown {
+        font-size: 14px;
+        margin-top: 10px;
+    }
 
 }
 
 /* MOBILE NAVBAR */
 
-@media (max-width:768px){
+@media (max-width:768px) {
 
-.navbar{
-flex-direction:column;
-gap:10px;
-padding:15px;
-}
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
 
-nav{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-}
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-nav a{
-margin:8px 10px;
-font-size:14px;
-}
-
-}
-
-@media (max-width:768px){
-
-.events{
-grid-template-columns:1fr 1fr;
-}
-
-.event-container{
-grid-template-columns:1fr 1fr;
-}
+    nav a {
+        margin: 8px 10px;
+        font-size: 14px;
+    }
 
 }
 
-.event-details{
-margin-top:20px;
-text-align:left;
-}
+@media (max-width:768px) {
 
-.event-details h3{
-color:#00eaff;
-margin-top:20px;
-}
+    .events {
+        grid-template-columns: 1fr 1fr;
+    }
 
-.event-details ul{
-padding-left:20px;
-}
-
-.event-details li{
-margin-bottom:8px;
-}
-
-.event-type{
-display:inline-block;
-background:#002f35;
-color:#00eaff;
-padding:6px 14px;
-border-radius:20px;
-font-size:12px;
-margin-bottom:10px;
-}
-
-.event-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-margin-top:20px;
-text-align:left;
-}
-
-.event-left p{
-margin-bottom:15px;
-}
-
-.event-right ul{
-padding-left:20px;
-margin-bottom:20px;
-}
-
-.event-right li{
-margin-bottom:8px;
-}
-
-@media(max-width:768px){
-
-.event-grid{
-grid-template-columns:1fr;
-gap:20px;
-}
+    .event-container {
+        grid-template-columns: 1fr 1fr;
+    }
 
 }
 
-.modal{
-padding:20px;
-overflow:auto;
+.event-details {
+    margin-top: 20px;
+    text-align: left;
 }
 
-.card{
-background-size:cover;
-background-position:center;
-height:120px;
-display:flex;
-align-items:center;
-justify-content:center;
-position:relative;
+.event-details h3 {
+    color: #00eaff;
+    margin-top: 20px;
+}
+
+.event-details ul {
+    padding-left: 20px;
+}
+
+.event-details li {
+    margin-bottom: 8px;
+}
+
+.event-type {
+    display: inline-block;
+    background: #002f35;
+    color: #00eaff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.event-left p {
+    margin-bottom: 15px;
+}
+
+.event-right ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.event-right li {
+    margin-bottom: 8px;
+}
+
+@media(max-width:768px) {
+
+    .event-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+}
+
+.modal {
+    padding: 20px;
+    overflow: auto;
+}
+
+.card {
+    background-size: cover;
+    background-position: center;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* ===== MODERN EVENT CARDS ===== */
+
+.card {
+    position: relative;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .35s ease;
+}
+
+/* dark overlay */
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.3),
+            rgba(0, 0, 0, 0.8));
+    transition: .3s;
+}
+
+/* event name */
+
+.card span {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border: 1px solid rgba(0, 234, 255, 0.3);
+}
+
+/* hover effect */
+
+.card:hover {
+    transform: translateY(-6px) scale(1.04);
+    box-shadow:
+        0 0 25px rgba(0, 234, 255, .4),
+        0 0 60px rgba(0, 234, 255, .2);
+}
+
+/* glow on hover */
+
+.card:hover span {
+    background: #00eaff;
+    color: black;
+    font-weight: 600;
+}
+
+/* subtle animated shine */
+
+.card::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.15),
+            transparent);
+    transform: rotate(25deg);
+    opacity: 0;
+    transition: .5s;
+}
+
+.card:hover::after {
+    opacity: 1;
+    animation: cardshine 1.2s linear;
+}
+
+@keyframes cardshine {
+    from {
+        transform: translateX(-120%) rotate(25deg);
+    }
+
+    to {
+        transform: translateX(120%) rotate(25deg);
+    }
+}
+
+.events {
+    margin-top: 50px;
+    gap: 30px;
+}
+
+@media(max-width:768px) {
+
+    .card {
+        height: 90px;
+    }
+
+    .card span {
+        font-size: 13px;
+        padding: 8px 14px;
+    }
+
 }
