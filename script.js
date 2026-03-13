@@ -242,12 +242,13 @@ document.getElementById("eventRules").innerHTML=rulesHTML
 const modal=document.getElementById("eventModal")
 modal.style.backgroundImage=`url(${data.image})`
 modal.style.display="flex"
-
+document.body.style.overflow="hidden"
 }
 
 
-function closeEvent() {
-    document.getElementById("eventModal").style.display = "none";
+function closeEvent(){
+document.getElementById("eventModal").style.display="none"
+document.body.style.overflow="auto"
 }
 
 

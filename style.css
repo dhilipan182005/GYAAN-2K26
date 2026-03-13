@@ -974,3 +974,8 @@ gap:20px;
 }
 
 }
+
+.modal{
+padding:20px;
+overflow:auto;
+}
