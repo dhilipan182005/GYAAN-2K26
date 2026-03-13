@@ -14,28 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// ================= COUNTDOWN =================
-const eventDate = new Date("April 12, 2026 09:00:00").getTime();
-
-setInterval(function () {
-
-    const now = new Date().getTime();
-    const distance = eventDate - now;
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-
-    const countdown = document.getElementById("countdown");
-
-    if (countdown) {
-        countdown.innerHTML =
-            days + " Days " + hours + " Hours " + minutes + " Minutes";
-    }
-
-}, 1000);
-
-
 // ================= EVENT POPUP =================
 function openEvent(event) {
 
@@ -436,3 +414,113 @@ if (circuitCanvas) {
     drawCircuit();
 
 }
+
+/* ===== 3D CARD TILT ===== */
+
+const cards = document.querySelectorAll(".profile-card");
+
+cards.forEach(card => {
+
+    card.addEventListener("mousemove", e => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+
+        card.style.transform =
+            `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "rotateX(0) rotateY(0)";
+    });
+
+});
+
+/* ===== ELECTRONICS GRID BACKGROUND ===== */
+
+const gridCanvas = document.getElementById("gridCanvas");
+
+if (gridCanvas) {
+
+    const ctx = gridCanvas.getContext("2d");
+
+    gridCanvas.width = window.innerWidth;
+    gridCanvas.height = window.innerHeight * 0.6;
+
+    let offset = 0;
+
+    function drawGrid() {
+
+        ctx.clearRect(0, 0, gridCanvas.width, gridCanvas.height);
+
+        ctx.strokeStyle = "rgba(0,234,255,0.4)";
+        ctx.lineWidth = 1;
+
+        let spacing = 40;
+
+        for (let x = 0; x < gridCanvas.width; x += spacing) {
+
+            ctx.beginPath();
+            ctx.moveTo(x, 0);
+            ctx.lineTo(x, gridCanvas.height);
+            ctx.stroke();
+
+        }
+
+        for (let y = 0; y < gridCanvas.height; y += spacing) {
+
+            ctx.beginPath();
+            ctx.moveTo(0, y + offset);
+            ctx.lineTo(gridCanvas.width, y + offset);
+            ctx.stroke();
+
+        }
+
+        offset += 0.4;
+
+        if (offset > spacing) {
+            offset = 0;
+        }
+
+        requestAnimationFrame(drawGrid);
+
+    }
+
+    drawGrid();
+
+    window.addEventListener("resize", () => {
+
+        gridCanvas.width = window.innerWidth;
+        gridCanvas.height = window.innerHeight * 0.6;
+
+    });
+
+}
+
+/* ===== COUNTDOWN ===== */
+
+const eventDate = new Date("April 12, 2026 09:00:00").getTime();
+
+setInterval(function () {
+
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+
+}, 1000);

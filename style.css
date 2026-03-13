@@ -1209,3 +1209,260 @@ nav a:hover::after {
     }
 
 }
+
+/* ================= COMMITTEE SECTION ================= */
+
+.hod-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.hod-card {
+    background: #111633;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    width: 250px;
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.2);
+}
+
+.hod-card img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.sub-title {
+    margin-top: 60px;
+    color: #00eaff;
+}
+
+.committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.committee-card {
+    background: #111633;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.committee-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.committee-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #00eaff;
+}
+
+/* ===== COMMITTEE ===== */
+
+.hod-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.hod-card {
+    background: #111633;
+    padding: 25px;
+    border-radius: 14px;
+    text-align: center;
+    width: 260px;
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.2);
+}
+
+.hod-card img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.sub-title {
+    margin-top: 60px;
+    color: #00eaff;
+}
+
+/* carousel */
+
+.carousel-wrapper {
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.carousel {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: scrollFaculty 25s linear infinite;
+}
+
+/* profile cards */
+
+.profile-card {
+    background: #111633;
+    padding: 20px;
+    border-radius: 14px;
+    text-align: center;
+    width: 200px;
+    flex-shrink: 0;
+    transition: 0.3s;
+}
+
+.profile-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.profile-card:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 25px #00eaff;
+}
+
+/* animation */
+
+@keyframes scrollFaculty {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+}
+
+/* ===== 3D PROFILE CARDS ===== */
+
+.profile-card {
+    background: #111633;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    width: 200px;
+    flex-shrink: 0;
+
+    transition: transform .15s ease, box-shadow .3s ease;
+
+    transform-style: preserve-3d;
+    perspective: 1000px;
+
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.15);
+}
+
+.profile-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+
+    transform: translateZ(30px);
+}
+
+.profile-card h4 {
+    transform: translateZ(20px);
+}
+
+.profile-card p {
+    transform: translateZ(15px);
+    font-size: 13px;
+}
+
+.profile-card:hover {
+    box-shadow:
+        0 10px 30px rgba(0, 234, 255, 0.4),
+        0 0 50px rgba(0, 234, 255, 0.2);
+}
+
+/* ===== HERO TECH GRID ===== */
+
+#gridCanvas {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    z-index: 1;
+    opacity: .7;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== NEON COUNTDOWN ===== */
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 18px 25px;
+    border-radius: 12px;
+    text-align: center;
+
+    border: 1px solid rgba(0, 234, 255, 0.3);
+
+    box-shadow:
+        0 0 15px rgba(0, 234, 255, 0.4),
+        inset 0 0 10px rgba(0, 234, 255, 0.2);
+}
+
+.time-box span {
+    font-size: 38px;
+    font-family: 'Orbitron', sans-serif;
+    color: #00eaff;
+
+    text-shadow:
+        0 0 10px #00eaff,
+        0 0 25px #00eaff,
+        0 0 45px #00eaff;
+}
+
+.time-box p {
+    font-size: 13px;
+    margin-top: 6px;
+    letter-spacing: 1px;
+    color: #ccc;
+}
+
+/* mobile */
+
+@media(max-width:768px) {
+
+    .time-box {
+        padding: 14px 18px;
+    }
+
+    .time-box span {
+        font-size: 28px;
+    }
+
+}

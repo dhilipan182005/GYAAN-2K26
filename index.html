@@ -52,6 +52,7 @@
     <section class="hero">
 
         <canvas id="techBackground"></canvas>
+        <canvas id="gridCanvas"></canvas>
 
         <div class="hero-content">
 
@@ -70,13 +71,29 @@
                 Register Now
             </a>
 
-            <div id="countdown"></div>
+            <div class="countdown-container">
 
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <p>Days</p>
+                </div>
+
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <p>Hours</p>
+                </div>
+
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <p>Minutes</p>
+                </div>
+
+            </div>
         </div>
 
     </section>
     <!--sponsors section-->
-    <section class="sponsors">
+    <section class="our ASSOCIATION">
 
         <h2>IN ASSOCIATION WITH</h2>
 
@@ -172,164 +189,259 @@
         width="100%" height="350" style="border:0">
     </iframe>
 
-    <!-- STAFF's Section -->
+    <!-- ================= ORGANIZING COMMITTEE ================= -->
 
-    <section id="hod">
+    <section id="committee">
 
-        <h2 class="section-title">Head of Department</h2>
+        <h2 class="section-title">Organizing Committee</h2>
 
-        <div class="staff-container">
+        <!-- HOD -->
 
-            <div class="staff-card">
+        <div class="hod-container">
 
+            <div class="hod-card">
                 <img src="images/hod.jpg">
-
                 <h3>Dr. S. Sumithra</h3>
-                <p>Head of Department<br>ECE</p>
-
+                <p>Head of Department – ECE</p>
             </div>
 
         </div>
 
-    </section>
 
-    <!-- STAFFS -->
+        <!-- FACULTY COORDINATORS -->
 
-    <!-- FACULTY COORDINATORS -->
+        <h3 class="sub-title">Faculty Coordinators</h3>
 
-    <section id="faculty">
+        <div class="carousel-wrapper">
 
-        <h2 class="section-title">Faculty Coordinators</h2>
+            <div class="carousel-wrapper">
 
-        <div class="faculty-grid">
+                <div class="carousel">
 
-            <div class="faculty-card">
-                <img src="images/staff1.jpg">
-                <h3>Dr. Staff Name 1</h3>
-                <p>Faculty Coordinator</p>
+                    <!-- ORIGINAL CARDS -->
+
+                    <div class="profile-card">
+                        <img src="images/staff1.jpg">
+                        <h4>Dr. Staff 1</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff2.jpg">
+                        <h4>Dr. Staff 2</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff3.jpg">
+                        <h4>Dr. Staff 3</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff4.jpg">
+                        <h4>Dr. Staff 4</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff5.jpg">
+                        <h4>Dr. Staff 5</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff6.jpg">
+                        <h4>Dr. Staff 6</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff7.jpg">
+                        <h4>Dr. Staff 7</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff8.jpg">
+                        <h4>Dr. Staff 8</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff9.jpg">
+                        <h4>Dr. Staff 9</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff10.jpg">
+                        <h4>Dr. Staff 10</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff11.jpg">
+                        <h4>Dr. Staff 11</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff12.jpg">
+                        <h4>Dr. Staff 12</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff13.jpg">
+                        <h4>Dr. Staff 13</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff14.jpg">
+                        <h4>Dr. Staff 14</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff15.jpg">
+                        <h4>Dr. Staff 15</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+
+                    <!-- DUPLICATED CARDS FOR LOOP -->
+
+                    <div class="profile-card">
+                        <img src="images/staff1.jpg">
+                        <h4>Dr. Staff 1</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff2.jpg">
+                        <h4>Dr. Staff 2</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff3.jpg">
+                        <h4>Dr. Staff 3</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff4.jpg">
+                        <h4>Dr. Staff 4</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff5.jpg">
+                        <h4>Dr. Staff 5</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff6.jpg">
+                        <h4>Dr. Staff 6</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff7.jpg">
+                        <h4>Dr. Staff 7</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff8.jpg">
+                        <h4>Dr. Staff 8</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff9.jpg">
+                        <h4>Dr. Staff 9</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff10.jpg">
+                        <h4>Dr. Staff 10</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff11.jpg">
+                        <h4>Dr. Staff 11</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff12.jpg">
+                        <h4>Dr. Staff 12</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff13.jpg">
+                        <h4>Dr. Staff 13</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff14.jpg">
+                        <h4>Dr. Staff 14</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/staff15.jpg">
+                        <h4>Dr. Staff 15</h4>
+                        <p>Faculty Coordinator</p>
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="faculty-card">
-                <img src="images/staff2.jpg">
-                <h3>Dr. Staff Name 2</h3>
-                <p>Faculty Coordinator</p>
+            <!-- STUDENT COORDINATORS -->
+
+            <h3 class="sub-title">Student Coordinators</h3>
+
+            <div class="carousel-wrapper">
+
+                <div class="carousel">
+
+                    <div class="profile-card">
+                        <img src="images/student1.jpg">
+                        <h4>Student 1</h4>
+                        <p>Student Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/student2.jpg">
+                        <h4>Student 2</h4>
+                        <p>Student Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/student3.jpg">
+                        <h4>Student 3</h4>
+                        <p>Student Coordinator</p>
+                    </div>
+
+                    <div class="profile-card">
+                        <img src="images/student4.jpg">
+                        <h4>Student 4</h4>
+                        <p>Student Coordinator</p>
+                    </div>
+
+                </div>
+
             </div>
-
-            <div class="faculty-card">
-                <img src="images/staff3.jpg">
-                <h3>Dr. Staff Name 3</h3>
-                <p>Faculty Coordinator</p>
-            </div>
-
-            <div class="faculty-card">
-                <img src="images/staff4.jpg">
-                <h3>Dr. Staff Name 4</h3>
-                <p>Faculty Coordinator</p>
-            </div>
-
-            <div class="faculty-card">
-                <img src="images/staff5.jpg">
-                <h3>Dr. Staff Name 5</h3>
-                <p>Faculty Coordinator</p>
-            </div>
-
-            <div class="faculty-card">
-                <img src="images/staff6.jpg">
-                <h3>Dr. Staff Name 6</h3>
-                <p>Faculty Coordinator</p>
-            </div>
-
-            <div class="faculty-card">
-                <img src="images/staff7.jpg">
-                <h3>Dr. Staff Name 7</h3>
-                <p>Faculty Coordinator</p>
-            </div>
-
-            <div class="faculty-card">
-                <img src="images/staff8.jpg">
-                <h3>Dr. Staff Name 8</h3>
-                <p>Faculty Coordinator</p>
-            </div>
-
-            <div class="faculty-card">
-                <img src="images/staff9.jpg">
-                <h3>Dr. Staff Name 9</h3>
-                <p>Faculty Coordinator</p>
-            </div>
-
-            <div class="faculty-card">
-                <img src="images/staff10.jpg">
-                <h3>Dr. Staff Name 10</h3>
-                <p>Faculty Coordinator</p>
-            </div>
-
-            <div class="faculty-card">
-                <img src="images/staff11.jpg">
-                <h3>Dr. Staff Name 11</h3>
-                <p>Faculty Coordinator</p>
-            </div>
-
-            <div class="faculty-card">
-                <img src="images/staff12.jpg">
-                <h3>Dr. Staff Name 12</h3>
-                <p>Faculty Coordinator</p>
-            </div>
-
-            <div class="faculty-card">
-                <img src="images/staff13.jpg">
-                <h3>Dr. Staff Name 13</h3>
-                <p>Faculty Coordinator</p>
-            </div>
-
-            <div class="faculty-card">
-                <img src="images/staff14.jpg">
-                <h3>Dr. Staff Name 14</h3>
-                <p>Faculty Coordinator</p>
-            </div>
-
-            <div class="faculty-card">
-                <img src="images/staff15.jpg">
-                <h3>Dr. Staff Name 15</h3>
-                <p>Faculty Coordinator</p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- STUDENT COORDINATORS -->
-
-    <section id="students">
-
-        <h2 class="section-title">Student Coordinators</h2>
-
-        <div class="faculty-grid">
-
-            <div class="faculty-card">
-                <img src="images/student1.jpg">
-                <h3>Student Name 1</h3>
-                <p>Student Coordinator</p>
-            </div>
-
-            <div class="faculty-card">
-                <img src="images/student2.jpg">
-                <h3>Student Name 2</h3>
-                <p>Student Coordinator</p>
-            </div>
-
-            <div class="faculty-card">
-                <img src="images/student3.jpg">
-                <h3>Student Name 3</h3>
-                <p>Student Coordinator</p>
-            </div>
-
-            <div class="faculty-card">
-                <img src="images/student4.jpg">
-                <h3>Student Name 4</h3>
-                <p>Student Coordinator</p>
-            </div>
-
-        </div>
 
     </section>
 
