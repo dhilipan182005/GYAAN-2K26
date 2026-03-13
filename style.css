@@ -838,3 +838,83 @@ nav a:hover::after {
     background: #050816;
     z-index: 9999;
 }
+
+/* ================= MOBILE HERO FIX ================= */
+
+@media (max-width:768px){
+
+.hero{
+padding:60px 20px;
+height:auto;
+}
+
+.hero-content{
+max-width:100%;
+padding:0 10px;
+}
+
+.hero h1{
+font-size:40px;
+letter-spacing:2px;
+}
+
+.hero h3{
+font-size:16px;
+}
+
+.hero p{
+font-size:14px;
+line-height:1.5;
+}
+
+.logo{
+width:220px;
+margin-bottom:15px;
+}
+
+.register-btn{
+padding:10px 22px;
+font-size:14px;
+}
+
+#countdown{
+font-size:14px;
+margin-top:10px;
+}
+
+}
+
+/* MOBILE NAVBAR */
+
+@media (max-width:768px){
+
+.navbar{
+flex-direction:column;
+gap:10px;
+padding:15px;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+nav a{
+margin:8px 10px;
+font-size:14px;
+}
+
+}
+
+@media (max-width:768px){
+
+.events{
+grid-template-columns:1fr 1fr;
+}
+
+.event-container{
+grid-template-columns:1fr 1fr;
+}
+
+}
