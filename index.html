@@ -268,22 +268,46 @@
 
     <!-- EVENT POPUP MODAL -->
 
-    <div id="eventModal" class="modal">
+    <div class="modal-content">
 
-        <div class="modal-content">
+<span class="close-btn" onclick="closeEvent()">✖</span>
 
-            <!-- Close Button -->
-            <span class="close-btn" onclick="closeEvent()">✖</span>
+<h4 id="eventType" class="event-type"></h4>
 
-            <!-- Event Title -->
-            <h2 id="eventTitle"></h2>
+<h2 id="eventTitle"></h2>
 
-            <!-- Event Description -->
-            <p id="eventDescription"></p>
+<p id="eventDescription"></p>
 
-        </div>
+<div class="event-grid">
 
-    </div>
+<div class="event-left">
+
+<p><b>📍 Venue</b><br><span id="eventVenue"></span></p>
+
+<p><b>⏰ Time Slot</b><br><span id="eventTime"></span></p>
+
+<p><b>👥 Team Size</b><br><span id="eventTeam"></span></p>
+
+<p><b>🎯 Duration</b><br><span id="eventDuration"></span></p>
+
+<p><b>👤 Event Handler</b><br><span id="eventHandler"></span></p>
+
+</div>
+
+<div class="event-right">
+
+<h3>Rules</h3>
+
+<ul id="eventRules"></ul>
+
+<p><b>Contact</b><br>
+<span id="eventContact"></span></p>
+
+</div>
+
+</div>
+
+</div>
 
     <!-- SCHEDULE -->
 

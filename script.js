@@ -37,64 +37,214 @@ setInterval(function () {
 
 
 // ================= EVENT POPUP =================
-function openEvent(event) {
+function openEvent(event){
 
-    let title = "";
-    let description = "";
-    let image = "";
+let data={}
 
-    if (event == "paper") {
-        title = "Paper Presentation";
-        description = "Participants present innovative research ideas related to Electronics and Communication Engineering.";
-        image = "images/paper.jpg";
-    }
+// PAPER PRESENTATION
+if(event=="paper"){
+data={
+title:"Paper Presentation",
+type:"Technical Event",
+desc:"Participants present innovative research ideas related to Electronics and Communication Engineering.",
 
-    if (event == "quiz") {
-        title = "Technical Quiz";
-        description = "A technical quiz covering electronics, communication systems, and general engineering knowledge.";
-        image = "images/quiz.jpg";
-    }
+venue:"Seminar Hall",
+time:"09:45 AM – 11:00 AM",
+team:"1 - 2 Members",
+duration:"7 Minutes",
 
-    if (event == "logic") {
-        title = "Logic Design";
-        description = "Participants solve digital logic problems and design circuits using Boolean logic.";
-        image = "images/logic.jpg";
-    }
+handler:"Dr. N. L. Venkataraman",
+contact:"9876543210",
 
-    if (event == "circuit") {
-        title = "Circuit Debugging";
-        description = "Identify faults in given circuits and fix them correctly within time.";
-        image = "images/circuit.jpg";
-    }
+rules:[
+"Maximum 2 members per team",
+"PPT presentation required",
+"Time limit: 7 minutes",
+"Topics must be related to ECE"
+],
 
-    if (event == "movie") {
-        title = "Movie Quiz";
-        description = "Fun quiz based on popular movies.";
-        image = "images/movie.jpg";
-    }
-
-    if (event == "jam") {
-        title = "JAM";
-        description = "Speak for one minute on a topic without hesitation.";
-        image = "images/jam.jpg";
-    }
-
-    if (event == "connection") {
-        title = "Connections";
-        description = "Find the common connection between clues.";
-        image = "images/connection.jpg";
-    }
-
-    const modal = document.getElementById("eventModal");
-
-    document.getElementById("eventTitle").innerText = title;
-    document.getElementById("eventDescription").innerText = description;
-
-    modal.style.background =
-        "url('" + image + "') center/cover no-repeat";
-
-    modal.style.display = "flex";
+image:"images/paper.jpg"
 }
+}
+
+// TECHNICAL QUIZ
+if(event=="quiz"){
+data={
+title:"Technical Quiz",
+type:"Technical Event",
+desc:"Quiz covering electronics, communication systems, and engineering fundamentals.",
+
+venue:"ECE Classroom",
+time:"11:15 AM – 12:00 PM",
+team:"2 Members",
+duration:"45 Minutes",
+
+handler:"Faculty Coordinator",
+contact:"9876543210",
+
+rules:[
+"Two members per team",
+"Multiple rounds will be conducted",
+"Quiz master's decision is final"
+],
+
+image:"images/quiz.jpg"
+}
+}
+
+// LOGIC DESIGN
+if(event=="logic"){
+data={
+title:"Logic Design",
+type:"Technical Event",
+desc:"Solve digital logic problems and implement circuits using Boolean logic.",
+
+venue:"Digital Lab",
+time:"12:00 PM – 01:00 PM",
+team:"1 Member",
+duration:"60 Minutes",
+
+handler:"Faculty Coordinator",
+contact:"9876543210",
+
+rules:[
+"Individual participation",
+"Questions based on digital logic",
+"Time based challenge"
+],
+
+image:"images/logic.jpg"
+}
+}
+
+// CIRCUIT DEBUGGING
+if(event=="circuit"){
+data={
+title:"Circuit Debugging",
+type:"Technical Event",
+desc:"Identify faults in given circuits and fix them correctly within time.",
+
+venue:"ECE Lab",
+time:"02:00 PM – 03:00 PM",
+team:"1 - 2 Members",
+duration:"60 Minutes",
+
+handler:"Faculty Coordinator",
+contact:"9876543210",
+
+rules:[
+"Find faults in the circuit",
+"Limited tools provided",
+"Fastest correct solution wins"
+],
+
+image:"images/circuit.jpg"
+}
+}
+
+// MOVIE QUIZ
+if(event=="movie"){
+data={
+title:"Movie Quiz",
+type:"Non Technical Event",
+desc:"Fun quiz based on popular movies and entertainment.",
+
+venue:"Seminar Hall",
+time:"03:30 PM – 04:00 PM",
+team:"2 Members",
+duration:"30 Minutes",
+
+handler:"Student Coordinator",
+contact:"9876543210",
+
+rules:[
+"Two members per team",
+"Multiple entertainment rounds",
+"No mobile phones allowed"
+],
+
+image:"images/movie.jpg"
+}
+}
+
+// JAM
+if(event=="jam"){
+data={
+title:"JAM (Just A Minute)",
+type:"Non Technical Event",
+desc:"Speak for one minute on a topic without hesitation, repetition or deviation.",
+
+venue:"Seminar Hall",
+time:"03:00 PM – 03:30 PM",
+team:"Individual",
+duration:"1 Minute per participant",
+
+handler:"Student Coordinator",
+contact:"9876543210",
+
+rules:[
+"No hesitation",
+"No repetition",
+"No deviation from topic"
+],
+
+image:"images/jam.jpg"
+}
+}
+
+// CONNECTIONS
+if(event=="connection"){
+data={
+title:"Connections",
+type:"Non Technical Event",
+desc:"Find the common connection between given clues.",
+
+venue:"ECE Classroom",
+time:"04:00 PM – 04:30 PM",
+team:"2 Members",
+duration:"30 Minutes",
+
+handler:"Student Coordinator",
+contact:"9876543210",
+
+rules:[
+"Guess the common link",
+"Multiple clue rounds",
+"Fastest correct answer wins"
+],
+
+image:"images/connection.jpg"
+}
+}
+
+// ================= ASSIGN DATA TO MODAL =================
+
+document.getElementById("eventTitle").innerText=data.title
+document.getElementById("eventType").innerText=data.type
+document.getElementById("eventDescription").innerText=data.desc
+
+document.getElementById("eventVenue").innerText=data.venue
+document.getElementById("eventTime").innerText=data.time
+document.getElementById("eventTeam").innerText=data.team
+document.getElementById("eventDuration").innerText=data.duration
+document.getElementById("eventHandler").innerText=data.handler
+document.getElementById("eventContact").innerText=data.contact
+
+// RULES LIST
+let rulesHTML=""
+data.rules.forEach(rule=>{
+rulesHTML+=`<li>${rule}</li>`
+})
+
+document.getElementById("eventRules").innerHTML=rulesHTML
+
+// BACKGROUND IMAGE
+const modal=document.getElementById("eventModal")
+modal.style.backgroundImage=`url(${data.image})`
+modal.style.display="flex"
+
+}
+
 
 function closeEvent() {
     document.getElementById("eventModal").style.display = "none";
