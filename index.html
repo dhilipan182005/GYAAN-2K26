@@ -2,625 +2,763 @@
 <html lang="en">
 
 <head>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500&display=swap"
-        rel="stylesheet">
-
-    <script src="https://unpkg.com/scrollreveal"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="description"
+        content="GYAAN 2K26 National Level Technical Symposium conducted by the Department of Electronics and Communication Engineering at JJ College of Engineering and Technology, Trichy.">
+    <meta name="keywords"
+        content="GYAAN 2K26, Technical Symposium, ECE Symposium, JJ College Symposium, Engineering Events, Trichy Symposium">
+    <meta name="author" content="GYAAN 2K26 Organizing Team">
+    <link rel="icon" href="images/logo.png">
     <title>GYAAN 2K26</title>
 
-    <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500&display=swap"
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
-</head>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <!-- ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
 
 <body>
 
+    <!-- SCROLL PROGRESS BAR -->
+    <div id="scrollBar"></div>
+
+    <!-- ===== LOADER ===== -->
     <div id="loader">
-        <img src="assets/loader-logo.png">
-        <h1>GYAAN 2K26</h1>
+        <img src="images/gyaan.png" alt="GYAAN Logo" class="loader-logo" onerror="this.style.display='none'">
+        <h1 class="loader-title">GYAAN 2K26</h1>
+        <p class="loader-welcome">National Level Technical Symposium</p>
+        <div class="loader-spinner">
+            <div class="spinner-ring"></div>
+        </div>
     </div>
-    <!-- NAVBAR -->
 
-    <header class="navbar">
-
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar" id="navbar">
         <div class="logo-area">
-            <img src="assets/logo.png" class="logo">
-            <h2>GYAAN 2K26</h2>
+            <img src="images/gyaan.png" alt="GYAAN Logo" class="college-logo" onerror="this.style.display='none'">
+            <div class="brand-text">
+                <h2>GYAAN 2K26</h2>
+                <span class="brand-sub">ECE Symposium – JJ College</span>
+            </div>
         </div>
 
-        <nav>
-            <a href="#about">About</a>
-            <a href="#events">Events</a>
-            <a href="#schedule">Schedule</a>
-            <a href="#sponsors">Sponsors</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
 
+        <nav id="mainNav">
+            <a href="#about"><i class="fa-solid fa-circle-info"></i> About</a>
+            <a href="#events"><i class="fa-solid fa-bolt"></i> Events</a>
+            <a href="#poster"><i class="fa-solid fa-image"></i> Poster</a>
+            <a href="#schedule"><i class="fa-solid fa-calendar"></i> Schedule</a>
+            <a href="#committee"><i class="fa-solid fa-users"></i> Team</a>
+            <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </nav>
     </header>
 
-    <!-- HERO -->
-
+    <!-- ===== HERO ===== -->
     <section class="hero">
-
         <canvas id="techBackground"></canvas>
-        <canvas id="gridCanvas"></canvas>
 
         <div class="hero-content">
+            <img src="images/logo.png" alt="GYAAN Logo" class="hero-logo" onerror="this.style.display='none'">
 
-            <img src="images/logo.png" class="logo">
-            <h1>GYAAN 2K26</h1>
+            <div class="hero-title-wrapper">
+                <h1 class="hero-title">GYAAN 2K26</h1>
+                <div class="hero-glow"></div>
+            </div>
 
-            <h3>National Level Technical Symposium</h3>
+            <h3 class="hero-sub">National Level Technical Symposium</h3>
 
-            <p>
+            <p class="hero-dept">
                 Department of Electronics and Communication Engineering<br>
-                JJ College of Engineering and Technology, Trichy
+
             </p>
 
+            <p class="hero-tagline">Innovate &bull; Compete &bull; Collaborate</p>
+
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdh4KCxBIH31-EjtN57LLizyIR3V3qj7xwVpzeB7a7fGOLzjw/viewform?usp=publish-editor"
-                class="register-btn" target="_blank">
-                Register Now
+                class="register-btn hero-register" target="_blank">
+                <i class="fa-solid fa-rocket"></i> Register Now
             </a>
 
             <div class="countdown-container">
-
                 <div class="time-box">
                     <span id="days">00</span>
                     <p>Days</p>
                 </div>
-
                 <div class="time-box">
                     <span id="hours">00</span>
                     <p>Hours</p>
                 </div>
-
                 <div class="time-box">
                     <span id="minutes">00</span>
                     <p>Minutes</p>
                 </div>
-
             </div>
         </div>
-
     </section>
-    <!--sponsors section-->
-    <section class="our ASSOCIATION">
 
-        <h2>IN ASSOCIATION WITH</h2>
+    <!-- REGISTRATION DEADLINE BANNER -->
+    <div class="deadline-banner">
+        <i class="fa-solid fa-bolt"></i> Registration Closes Soon – Limited Slots Available &nbsp;
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdh4KCxBIH31-EjtN57LLizyIR3V3qj7xwVpzeB7a7fGOLzjw/viewform?usp=publish-editor"
+            target="_blank" class="banner-link">Register Now →</a>
+    </div>
 
-        <div class="sponsor-wrapper">
+    <!-- ===== POSTER SECTION ===== -->
+    <section id="poster" class="poster-section">
+        <h2 class="section-title">Event Poster</h2>
+        <p class="poster-desc">Download the official brochure of <b>GYAAN 2K26</b> to see full event details.</p>
 
-            <div class="sponsor-slider">
-
-                <img src="sponsors/sponsor1.png">
-                <img src="sponsors/sponsor2.png">
-                <img src="sponsors/sponsor3.png">
-                <img src="sponsors/sponsor4.png">
-
-                <img src="sponsors/sponsor1.png">
-                <img src="sponsors/sponsor2.png">
-                <img src="sponsors/sponsor3.png">
-                <img src="sponsors/sponsor4.png">
-
-                <img src="sponsors/sponsor1.png">
-                <img src="sponsors/sponsor2.png">
-                <img src="sponsors/sponsor3.png">
-                <img src="sponsors/sponsor4.png">
-
-
+        <div class="poster-container">
+            <img src="images/poster.jpg" alt="GYAAN 2K26 Poster" class="poster-image"
+                onerror="this.src='assets/loader-logo.png'">
+            <div class="poster-buttons">
+                <a href="images/poster.jpg" target="_blank" class="poster-btn">
+                    <i class="fa-solid fa-eye"></i> View Poster
+                </a>
+                <a href="files/gyaan2k26-brochure.pdf" download class="poster-btn download">
+                    <i class="fa-solid fa-download"></i> Download Brochure
+                </a>
             </div>
         </div>
-
     </section>
 
-    <!-- ABOUT -->
+    <div id="posterModal" class="poster-modal">
+        <span class="poster-close">&times;</span>
+        <img id="posterFull" alt="Poster Full View">
+    </div>
 
+    <!-- ===== WHY PARTICIPATE (HIGHLIGHTS) ===== -->
+    <section id="highlights" class="highlights-section">
+        <h2 class="section-title">Why Participate?</h2>
+        <p class="section-sub">Join hundreds of students from across India in a battle of brilliance</p>
+
+        <div class="highlights-grid">
+
+            <div class="highlight-card">
+                <div class="highlight-icon"><i class="fa-solid fa-users"></i></div>
+                <h3 class="counter" data-target="300">0</h3>
+                <p>Participants</p>
+            </div>
+
+            <div class="highlight-card">
+                <div class="highlight-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h3 class="counter" data-target="7">0</h3>
+                <p>Events</p>
+            </div>
+
+            <div class="highlight-card">
+                <div class="highlight-icon"><i class="fa-solid fa-building-columns"></i></div>
+                <h3 class="counter" data-target="20">0</h3>
+                <p>Colleges</p>
+            </div>
+
+            <div class="highlight-card prize-card">
+                <div class="highlight-icon prize-icon"><i class="fa-solid fa-trophy"></i></div>
+                <h3 class="counter" data-target="15000">0</h3>
+                <p>Prize Pool (₹)</p>
+                <span class="prize-badge">Exciting Prizes!</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!--===== ASSOCIATION SECTION =====-->
+    <section id="association">
+        <h2 class="section-title">In Association With</h2>
+        <div class="association-grid">
+            <div class="association-card">
+                <img src="sponsors/sponsor1.png" alt="IEEE" onerror="this.src='images/logo.png'">
+                <p>Department of IETE</p>
+            </div>
+            <div class="association-card">
+                <img src="sponsors/sponsor2.png" alt="IIC" onerror="this.src='images/logo.png'">
+                <p>Institution Innovation Council</p>
+            </div>
+            <div class="association-card">
+                <img src="sponsors/sponsor3.png" alt="ECE" onerror="this.src='images/logo.png'">
+                <p>IEEE Student Branch</p>
+            </div>
+            <div class="association-card">
+                <img src="sponsors/sponsor4.png" alt="ECE" onerror="this.src='images/logo.png'">
+                <p>Department of ISTE</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT GYAAN 2K26 ===== -->
     <section id="about">
-
-        <h2 class="section-title">About Symposium</h2>
-
-        <p style="text-align:center; max-width:700px; margin:auto;">
-            GYAAN 2K26 is a national level technical symposium organized by the Department of Electronics and
-            Communication Engineering at JJ College of Engineering and Technology, Trichy. The event brings together
-            innovative students from various colleges to showcase their technical skills through competitions, quizzes,
-            and exciting activities.
+        <h2 class="section-title">About GYAAN 2K26</h2>
+        <p class="about-text">
+            GYAAN 2K26 is a National Level Technical Symposium organized by the Department of Electronics and
+            Communication Engineering at JJ College of Engineering and Technology, Trichy.
+            The symposium brings together talented students from different institutions to showcase innovation,
+            creativity, and technical skills through various technical and non-technical competitions.
         </p>
-
-    </section>
-
-    <!-- About College-->
-    <section id="college">
-
-        <h2 class="section-title">About JJ College of Engineering and Technology</h2>
-
-        <div class="college-section">
-
-            <img src="images/principal.jpg" class="principal-img">
-
-            <div class="college-info">
-                <p>
-                    JJ College of Engineering and Technology, Trichy, is one of the leading engineering institutions in
-                    Tamil Nadu.
-                    The college is committed to excellence in education, innovation, and research while preparing
-                    students
-                    to meet global technological challenges.
-                </p>
-
-                <div class="social-icons">
-
-                    <a href="https://www.instagram.com/sowdambikaajjcet/" target="_blank">
-                        <img src="icons/instagram.png">
-                    </a>
-
-                    <a href="https://www.facebook.com/SowdambikaaJJCET/" target="_blank">
-                        <img src="icons/facebook.png">
-                    </a>
-
-                    <a href="https://www.linkedin.com/school/15120055/admin/dashboard" target="_blank">
-                        <img src="icons/linkedin.png">
-                    </a>
-
-                    <a href="https://x.com/JJCET3807" target="_blank">
-                        <img src="icons/x.png">
-                    </a>
-
-                    <a href="https://jjcet.ac.in/" target="_blank">
-                        <img src="icons/web.png">
-                    </a>
-
-                </div>
-
-            </div>
-
+        <div class="about-features">
+            <div class="feature"><i class="fa-solid fa-bolt"></i> 7 Events</div>
+            <div class="feature"><i class="fa-solid fa-trophy"></i> Exciting Cash Prizes</div>
+            <div class="feature"><i class="fa-solid fa-certificate"></i> Certificates for All</div>
+            <div class="feature"><i class="fa-solid fa-handshake"></i> Networking</div>
         </div>
-
     </section>
 
+    <!-- ===== ABOUT COLLEGE ===== -->
+    <section id="college">
+        <h2 class="section-title">About JJ College</h2>
+        <div class="college-container">
+            <img src="images/principal.jpg" alt="Principal" class="college-img" onerror="this.style.opacity=0">
+            <div class="college-text">
+                <p>JJ College of Engineering and Technology, Trichy is a premier institution dedicated to providing
+                    quality engineering education and promoting research, innovation, and technical excellence among
+                    students.</p>
+                <div class="college-stats">
+                    <div>
+                        <h3>2008</h3>
+                        <p>Established</p>
+                    </div>
+                    <div>
+                        <h3>5000+</h3>
+                        <p>Students</p>
+                    </div>
+                    <div>
+                        <h3>10+</h3>
+                        <p>Departments</p>
+                    </div>
+                </div>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/sowdambikaajjcet/" target="_blank"><img src="icons/instagram.png"
+                            alt="Instagram"></a>
+                    <a href="https://www.facebook.com/SowdambikaaJJCET/" target="_blank"><img src="icons/facebook.png"
+                            alt="Facebook"></a>
+                    <a href="https://www.linkedin.com/school/15120055/admin/dashboard" target="_blank"><img
+                            src="icons/linkedin.png" alt="LinkedIn"></a>
+                    <a href="https://x.com/JJCET3807" target="_blank"><img src="icons/x.png" alt="X"></a>
+                    <a href="https://jjcet.ac.in/" target="_blank"><img src="icons/web.png" alt="Website"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GOOGLE MAPS -->
     <iframe src="https://www.google.com/maps?q=JJ+College+of+Engineering+and+Technology+Trichy&output=embed"
-        width="100%" height="350" style="border:0">
+        width="100%" height="350" style="border:0; display:block;">
     </iframe>
 
-    <!-- ================= ORGANIZING COMMITTEE ================= -->
-
+    <!-- ===== ORGANIZING COMMITTEE ===== -->
     <section id="committee">
-
         <h2 class="section-title">Organizing Committee</h2>
 
         <!-- HOD -->
-
         <div class="hod-container">
-
             <div class="hod-card">
-                <img src="images/hod.jpg">
+                <img src="images/hod.jpg" alt="HOD" onerror="this.src='images/logo.png'">
                 <h3>Dr. S. Sumithra</h3>
                 <p>Head of Department – ECE</p>
             </div>
-
         </div>
-
 
         <!-- FACULTY COORDINATORS -->
-
-        <h3 class="sub-title">Faculty Coordinators</h3>
-
-        <div class="carousel-wrapper">
-
-            <div class="carousel-wrapper">
-
-                <div class="carousel">
-
-                    <!-- ORIGINAL CARDS -->
-
+        <div class="team-section">
+            <h3 class="sub-title">Faculty Coordinators</h3>
+            <div class="slider-container">
+                <button class="slider-btn left" onclick="scrollSlider('facultySlider', -1)">&#10094;</button>
+                <div class="slider" id="facultySlider">
                     <div class="profile-card">
-                        <img src="images/staff1.jpg">
-                        <h4>Dr. Staff 1</h4>
+                        <img src="images/staff1.jpg" alt="Staff 1" onerror="this.src='images/logo.png'">
+                        <h4>Dr. N. L. Venkataraman</h4>
                         <p>Faculty Coordinator</p>
                     </div>
-
                     <div class="profile-card">
-                        <img src="images/staff2.jpg">
-                        <h4>Dr. Staff 2</h4>
+                        <img src="images/staff2.jpg" alt="Staff 2" onerror="this.src='images/logo.png'">
+                        <h4>Dr. P. Premkumar</h4>
                         <p>Faculty Coordinator</p>
                     </div>
-
                     <div class="profile-card">
-                        <img src="images/staff3.jpg">
-                        <h4>Dr. Staff 3</h4>
+                        <img src="images/staff3.jpg" alt="Staff 3" onerror="this.src='images/logo.png'">
+                        <h4>Mr. S. Sureshkumar</h4>
                         <p>Faculty Coordinator</p>
                     </div>
-
                     <div class="profile-card">
-                        <img src="images/staff4.jpg">
-                        <h4>Dr. Staff 4</h4>
+                        <img src="images/staff4.jpg" alt="Staff 4" onerror="this.src='images/logo.png'">
+                        <h4>Dr. R. Purushothaman</h4>
                         <p>Faculty Coordinator</p>
                     </div>
-
                     <div class="profile-card">
-                        <img src="images/staff5.jpg">
-                        <h4>Dr. Staff 5</h4>
+                        <img src="images/staff5.jpg" alt="Staff 5" onerror="this.src='images/logo.png'">
+                        <h4>Dr. M. Shobana</h4>
                         <p>Faculty Coordinator</p>
                     </div>
-
                     <div class="profile-card">
-                        <img src="images/staff6.jpg">
-                        <h4>Dr. Staff 6</h4>
+                        <img src="images/staff6.jpg" alt="Staff 6" onerror="this.src='images/logo.png'">
+                        <h4>Mrs. R. Meenakshi</h4>
                         <p>Faculty Coordinator</p>
                     </div>
-
                     <div class="profile-card">
-                        <img src="images/staff7.jpg">
-                        <h4>Dr. Staff 7</h4>
+                        <img src="images/staff7.jpg" alt="Staff 7" onerror="this.src='images/logo.png'">
+                        <h4>Mrs. K. Kokulavani</h4>
                         <p>Faculty Coordinator</p>
                     </div>
-
                     <div class="profile-card">
-                        <img src="images/staff8.jpg">
-                        <h4>Dr. Staff 8</h4>
+                        <img src="images/staff8.jpg" alt="Staff 8" onerror="this.src='images/logo.png'">
+                        <h4>Mrs. R. Dharani</h4>
                         <p>Faculty Coordinator</p>
                     </div>
-
                     <div class="profile-card">
-                        <img src="images/staff9.jpg">
-                        <h4>Dr. Staff 9</h4>
+                        <img src="images/staff9.jpg" alt="Staff 9" onerror="this.src='images/logo.png'">
+                        <h4>Mrs. S. Sagaya Mary</h4>
                         <p>Faculty Coordinator</p>
                     </div>
-
                     <div class="profile-card">
-                        <img src="images/staff10.jpg">
-                        <h4>Dr. Staff 10</h4>
+                        <img src="images/staff10.jpg" alt="Staff 10" onerror="this.src='images/logo.png'">
+                        <h4>Ms. RV. Kavya</h4>
                         <p>Faculty Coordinator</p>
                     </div>
-
                     <div class="profile-card">
-                        <img src="images/staff11.jpg">
-                        <h4>Dr. Staff 11</h4>
+                        <img src="images/staff11.jpg" alt="Staff 11" onerror="this.src='images/logo.png'">
+                        <h4>Ms. S. Usha Nandhini</h4>
                         <p>Faculty Coordinator</p>
                     </div>
-
-                    <div class="profile-card">
-                        <img src="images/staff12.jpg">
-                        <h4>Dr. Staff 12</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
-                    <div class="profile-card">
-                        <img src="images/staff13.jpg">
-                        <h4>Dr. Staff 13</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
-                    <div class="profile-card">
-                        <img src="images/staff14.jpg">
-                        <h4>Dr. Staff 14</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
-                    <div class="profile-card">
-                        <img src="images/staff15.jpg">
-                        <h4>Dr. Staff 15</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
-
-                    <!-- DUPLICATED CARDS FOR LOOP -->
-
-                    <div class="profile-card">
-                        <img src="images/staff1.jpg">
-                        <h4>Dr. Staff 1</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
-                    <div class="profile-card">
-                        <img src="images/staff2.jpg">
-                        <h4>Dr. Staff 2</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
-                    <div class="profile-card">
-                        <img src="images/staff3.jpg">
-                        <h4>Dr. Staff 3</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
-                    <div class="profile-card">
-                        <img src="images/staff4.jpg">
-                        <h4>Dr. Staff 4</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
-                    <div class="profile-card">
-                        <img src="images/staff5.jpg">
-                        <h4>Dr. Staff 5</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
-                    <div class="profile-card">
-                        <img src="images/staff6.jpg">
-                        <h4>Dr. Staff 6</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
-                    <div class="profile-card">
-                        <img src="images/staff7.jpg">
-                        <h4>Dr. Staff 7</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
-                    <div class="profile-card">
-                        <img src="images/staff8.jpg">
-                        <h4>Dr. Staff 8</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
-                    <div class="profile-card">
-                        <img src="images/staff9.jpg">
-                        <h4>Dr. Staff 9</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
-                    <div class="profile-card">
-                        <img src="images/staff10.jpg">
-                        <h4>Dr. Staff 10</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
-                    <div class="profile-card">
-                        <img src="images/staff11.jpg">
-                        <h4>Dr. Staff 11</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
-                    <div class="profile-card">
-                        <img src="images/staff12.jpg">
-                        <h4>Dr. Staff 12</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
-                    <div class="profile-card">
-                        <img src="images/staff13.jpg">
-                        <h4>Dr. Staff 13</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
-                    <div class="profile-card">
-                        <img src="images/staff14.jpg">
-                        <h4>Dr. Staff 14</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
-                    <div class="profile-card">
-                        <img src="images/staff15.jpg">
-                        <h4>Dr. Staff 15</h4>
-                        <p>Faculty Coordinator</p>
-                    </div>
-
                 </div>
-
+                <button class="slider-btn right" onclick="scrollSlider('facultySlider', 1)">&#10095;</button>
             </div>
+        </div>
 
-            <!-- STUDENT COORDINATORS -->
-
+        <!-- STUDENT COORDINATORS -->
+        <div class="student-section">
             <h3 class="sub-title">Student Coordinators</h3>
-
-            <div class="carousel-wrapper">
-
-                <div class="carousel">
-
+            <div class="slider-container">
+                <button class="slider-btn left" onclick="scrollSlider('studentSlider', -1)">&#10094;</button>
+                <div class="slider" id="studentSlider">
                     <div class="profile-card">
-                        <img src="images/student1.jpg">
-                        <h4>Student 1</h4>
+                        <img src="images/student1.jpg" alt="Arun Kumar" onerror="this.src='images/logo.png'">
+                        <h4>Arun Kumar</h4>
                         <p>Student Coordinator</p>
+                        <button class="contact-btn" onclick="openContact('Arun Kumar','9876543210','arun@gmail.com')"><i
+                                class="fa-solid fa-address-card"></i> View Contact</button>
                     </div>
-
                     <div class="profile-card">
-                        <img src="images/student2.jpg">
-                        <h4>Student 2</h4>
+                        <img src="images/student2.jpg" alt="Rahul S" onerror="this.src='images/logo.png'">
+                        <h4>Rahul S</h4>
                         <p>Student Coordinator</p>
+                        <button class="contact-btn" onclick="openContact('Rahul S','9876543211','rahul@gmail.com')"><i
+                                class="fa-solid fa-address-card"></i> View Contact</button>
                     </div>
-
                     <div class="profile-card">
-                        <img src="images/student3.jpg">
-                        <h4>Student 3</h4>
+                        <img src="images/student3.jpg" alt="Vignesh K" onerror="this.src='images/logo.png'">
+                        <h4>Vignesh K</h4>
                         <p>Student Coordinator</p>
+                        <button class="contact-btn"
+                            onclick="openContact('Vignesh K','9876543212','vignesh@gmail.com')"><i
+                                class="fa-solid fa-address-card"></i> View Contact</button>
                     </div>
-
                     <div class="profile-card">
-                        <img src="images/student4.jpg">
-                        <h4>Student 4</h4>
+                        <img src="images/student4.jpg" alt="Praveen M" onerror="this.src='images/logo.png'">
+                        <h4>Praveen M</h4>
                         <p>Student Coordinator</p>
+                        <button class="contact-btn"
+                            onclick="openContact('Praveen M','9876543213','praveen@gmail.com')"><i
+                                class="fa-solid fa-address-card"></i> View Contact</button>
                     </div>
-
+                    <div class="profile-card">
+                        <img src="images/student5.jpg" alt="Karthik R" onerror="this.src='images/logo.png'">
+                        <h4>Karthik R</h4>
+                        <p>Student Coordinator</p>
+                        <button class="contact-btn"
+                            onclick="openContact('Karthik R','9876543214','karthik@gmail.com')"><i
+                                class="fa-solid fa-address-card"></i> View Contact</button>
+                    </div>
+                    <div class="profile-card">
+                        <img src="images/student6.jpg" alt="Divya S" onerror="this.src='images/logo.png'">
+                        <h4>Divya S</h4>
+                        <p>Student Coordinator</p>
+                        <button class="contact-btn" onclick="openContact('Divya S','9876543215','divya@gmail.com')"><i
+                                class="fa-solid fa-address-card"></i> View Contact</button>
+                    </div>
+                    <div class="profile-card">
+                        <img src="images/student7.jpg" alt="Nisha P" onerror="this.src='images/logo.png'">
+                        <h4>Nisha P</h4>
+                        <p>Student Coordinator</p>
+                        <button class="contact-btn" onclick="openContact('Nisha P','9876543216','nisha@gmail.com')"><i
+                                class="fa-solid fa-address-card"></i> View Contact</button>
+                    </div>
+                    <div class="profile-card">
+                        <img src="images/student8.jpg" alt="Keerthana K" onerror="this.src='images/logo.png'">
+                        <h4>Keerthana K</h4>
+                        <p>Student Coordinator</p>
+                        <button class="contact-btn"
+                            onclick="openContact('Keerthana K','9876543217','keerthana@gmail.com')"><i
+                                class="fa-solid fa-address-card"></i> View Contact</button>
+                    </div>
+                    <div class="profile-card">
+                        <img src="images/student9.jpg" alt="Priya D" onerror="this.src='images/logo.png'">
+                        <h4>Priya D</h4>
+                        <p>Student Coordinator</p>
+                        <button class="contact-btn" onclick="openContact('Priya D','9876543218','priya@gmail.com')"><i
+                                class="fa-solid fa-address-card"></i> View Contact</button>
+                    </div>
+                    <div class="profile-card">
+                        <img src="images/student10.jpg" alt="Sneha R" onerror="this.src='images/logo.png'">
+                        <h4>Sneha R</h4>
+                        <p>Student Coordinator</p>
+                        <button class="contact-btn" onclick="openContact('Sneha R','9876543219','sneha@gmail.com')"><i
+                                class="fa-solid fa-address-card"></i> View Contact</button>
+                    </div>
                 </div>
-
+                <button class="slider-btn right" onclick="scrollSlider('studentSlider', 1)">&#10095;</button>
             </div>
-
+        </div>
     </section>
 
-    <!-- EVENTS -->
-
-    <section id="events">
-
+    <!-- ===== EVENTS ===== -->
+    <section id="events" class="events-section">
         <h2 class="section-title">Events</h2>
+        <p class="section-sub">Explore a range of technical and non-technical competitions designed to test creativity,
+            knowledge, and problem-solving skills.</p>
 
-        <h3>Technical Events</h3>
-
-        <div class="events">
-
-            <div class="card" onclick="openEvent('paper')" style="background-image:url('images/paper.jpg')">
-                <span>Paper Presentation</span>
+        <div class="events-grid">
+            <div class="event-card" onclick="openEvent('paper')">
+                <img src="images/paper.jpg" alt="Paper Presentation">
+                <div class="event-overlay">
+                    <span class="event-tag">Technical</span>
+                    <h3>Paper Presentation</h3>
+                    <p>Research & Innovation</p>
+                </div>
             </div>
 
-            <div class="card" onclick="openEvent('quiz')" style="background-image:url('images/quiz.jpg')">
-                <span>Technical Quiz</span>
+            <div class="event-card" onclick="openEvent('quiz')">
+                <img src="images/quiz.jpg" alt="Technical Quiz">
+                <div class="event-overlay">
+                    <span class="event-tag">Technical</span>
+                    <h3>Technical Quiz</h3>
+                    <p>Knowledge Battle</p>
+                </div>
             </div>
 
-            <div class="card" onclick="openEvent('logic')" style="background-image:url('images/logic.jpg')">
-                <span>Logic Design</span>
+            <div class="event-card" onclick="openEvent('logic')">
+                <img src="images/logic.jpg" alt="Logic Design">
+                <div class="event-overlay">
+                    <span class="event-tag">Technical</span>
+                    <h3>Logic Design</h3>
+                    <p>Digital Circuits</p>
+                </div>
             </div>
 
-            <div class="card" onclick="openEvent('circuit')" style="background-image:url('images/circuit.jpg')">
-                <span>Circuit Debugging</span>
+            <div class="event-card" onclick="openEvent('circuit')">
+                <img src="images/circuit.jpg" alt="Circuit Debugging">
+                <div class="event-overlay">
+                    <span class="event-tag">Technical</span>
+                    <h3>Circuit Debugging</h3>
+                    <p>Fault Identification</p>
+                </div>
+            </div>
+
+            <div class="event-card" onclick="openEvent('movie')">
+                <img src="images/movie.jpg" alt="Movie Quiz">
+                <div class="event-overlay">
+                    <span class="event-tag non-tech">Non-Technical</span>
+                    <h3>Movie Quiz</h3>
+                    <p>Entertainment Round</p>
+                </div>
+            </div>
+
+            <div class="event-card" onclick="openEvent('jam')">
+                <img src="images/jam.jpg" alt="JAM">
+                <div class="event-overlay">
+                    <span class="event-tag non-tech">Non-Technical</span>
+                    <h3>JAM</h3>
+                    <p>Just A Minute</p>
+                </div>
+            </div>
+
+            <div class="event-card" onclick="openEvent('connection')">
+                <img src="images/connection.jpg" alt="Connections">
+                <div class="event-overlay">
+                    <span class="event-tag non-tech">Non-Technical</span>
+                    <h3>Connections</h3>
+                    <p>Find the Link</p>
+                </div>
             </div>
         </div>
-
-        <h3 style="margin-top:40px">Non Technical Events</h3>
-
-        <div class="events">
-
-            <div class="card" onclick="openEvent('movie')" style="background-image:url('images/movie.jpg')">
-                <span>Movie Quiz</span>
-            </div>
-
-            <div class="card" onclick="openEvent('jam')" style="background-image:url('images/jam.jpg')">
-                <span>JAM</span>
-            </div>
-
-            <div class="card" onclick="openEvent('connection')" style="background-image:url('images/connection.jpg')">
-                <span>Connections</span>
-            </div>
-
-        </div>
-
     </section>
 
-    <!-- EVENT POPUP MODAL -->
-
+    <!-- ===== EVENT POPUP MODAL ===== -->
     <div id="eventModal" class="modal">
-
         <div class="modal-content">
-
-            <span class="close-btn" onclick="closeEvent()">✖</span>
+            <button class="close-btn" onclick="closeEvent()"><i class="fa-solid fa-xmark"></i></button>
 
             <h4 id="eventType" class="event-type"></h4>
-
             <h2 id="eventTitle"></h2>
-
-            <p id="eventDescription"></p>
+            <p id="eventDescription" class="event-desc-text"></p>
 
             <div class="event-grid">
-
                 <div class="event-left">
-
-                    <p><b>📍 Venue</b><br><span id="eventVenue"></span></p>
-
-                    <p><b>⏰ Time Slot</b><br><span id="eventTime"></span></p>
-
-                    <p><b>👥 Team Size</b><br><span id="eventTeam"></span></p>
-
-                    <p><b>🎯 Duration</b><br><span id="eventDuration"></span></p>
-
-                    <p><b>👤 Event Handler</b><br><span id="eventHandler"></span></p>
-
+                    <div class="event-info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div><b>Venue</b><br><span id="eventVenue"></span></div>
+                    </div>
+                    <div class="event-info-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div><b>Time Slot</b><br><span id="eventTime"></span></div>
+                    </div>
+                    <div class="event-info-item">
+                        <i class="fa-solid fa-users"></i>
+                        <div><b>Team Size</b><br><span id="eventTeam"></span></div>
+                    </div>
+                    <div class="event-info-item">
+                        <i class="fa-solid fa-stopwatch"></i>
+                        <div><b>Duration</b><br><span id="eventDuration"></span></div>
+                    </div>
+                    <div class="event-info-item">
+                        <i class="fa-solid fa-user-tie"></i>
+                        <div><b>Event Handler</b><br><span id="eventHandler"></span></div>
+                    </div>
                 </div>
 
                 <div class="event-right">
-
-                    <h3>Rules</h3>
-
+                    <h3><i class="fa-solid fa-list-check"></i> Rules</h3>
                     <ul id="eventRules"></ul>
-
-                    <p><b>Contact</b><br>
-                        <span id="eventContact"></span>
-                    </p>
-
+                    <div class="event-contact-box">
+                        <i class="fa-solid fa-phone"></i>
+                        <div><b>Contact</b><br><span id="eventContact"></span></div>
+                    </div>
                 </div>
-
             </div>
-
         </div>
-
     </div>
 
-    <!-- SCHEDULE -->
-
-    <section id="schedule">
-
-        <h2 class="section-title">Event Schedule</h2>
-
-        <ul class="timeline">
-
-            <li><b>08:30 AM – 09:30 AM</b> : Registration</li>
-            <li><b>09:30 AM – 09:45 AM</b> : Welcome Address</li>
-            <li><b>09:45 AM – 11:00 AM</b> : Paper Presentation</li>
-            <li><b>11:00 AM – 11:15 AM</b> : Tea Break</li>
-            <li><b>11:15 AM – 12:00 PM</b> : Technical Quiz</li>
-            <li><b>12:00 PM – 01:00 PM</b> : Logic Design</li>
-            <li><b>01:00 PM – 02:00 PM</b> : Lunch Break</li>
-            <li><b>02:00 PM – 03:00 PM</b> : Circuit Debugging</li>
-            <li><b>03:00 PM – 03:30 PM</b> : JAM</li>
-            <li><b>03:30 PM – 04:00 PM</b> : Movie Quiz</li>
-            <li><b>04:00 PM – 04:30 PM</b> : Connections</li>
-            <li><b>04:30 PM – 05:00 PM</b> : Prize Distribution</li>
-
-        </ul>
-
-    </section>
-
-
-    <!-- GALLERY -->
-
-    <section id="gallery">
-
-        <h2 class="section-title">Gallery</h2>
-
-        <div class="gallery-wrapper">
-
-            <div class="gallery-slider">
-
-                <img src="gallery/img1.jpg">
-                <img src="gallery/img2.jpg">
-                <img src="gallery/img3.jpg">
-                <img src="gallery/img4.jpg">
-                <img src="gallery/img5.jpg">
-
-                <!-- duplicate images for smooth loop -->
-
-                <img src="gallery/img1.jpg">
-                <img src="gallery/img2.jpg">
-                <img src="gallery/img3.jpg">
-                <img src="gallery/img4.jpg">
-                <img src="gallery/img5.jpg">
-
+    <!-- CONTACT MODAL -->
+    <div id="contactModal" class="modal contact-modal-overlay">
+        <div class="modal-content contact-modal-card">
+            <button class="close-btn" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div class="contact-modal-avatar">
+                <i class="fa-solid fa-user-circle"></i>
+            </div>
+            <h3 id="contactName"></h3>
+            <div class="contact-modal-info">
+                <p><i class="fa-solid fa-phone"></i> <span id="contactPhone"></span></p>
+                <p><i class="fa-solid fa-envelope"></i> <span id="contactEmail"></span></p>
             </div>
         </div>
+    </div>
 
-    </section>
+    <!-- ===== SCHEDULE (Centered Vertical Timeline) ===== -->
+    <section id="schedule" class="schedule-section">
+        <h2 class="section-title">Event Schedule</h2>
+        <p class="section-sub">April 12, 2026 – JJ College of Engineering and Technology</p>
 
-    <!-- CONTACT -->
+        <div class="v-timeline">
 
-    <section id="contact">
+            <div class="v-item left" onclick="showSchedule('welcome')">
+                <div class="v-card">
+                    <span class="v-time">09:30 AM</span>
+                    <h4>Welcome Address</h4>
+                    <p>Opening ceremony & introductions</p>
+                </div>
+                <div class="v-dot"></div>
+            </div>
 
-        <h2 class="section-title">Contact</h2>
+            <div class="v-item right" onclick="showSchedule('paper')">
+                <div class="v-dot"></div>
+                <div class="v-card">
+                    <span class="v-time">09:45 AM</span>
+                    <h4>Paper Presentation</h4>
+                    <p>Technical research showcase</p>
+                </div>
+            </div>
 
-        <div class="contact">
+            <div class="v-item left" onclick="showSchedule('quiz')">
+                <div class="v-card">
+                    <span class="v-time">11:15 AM</span>
+                    <h4>Technical Quiz</h4>
+                    <p>Engineering knowledge battle</p>
+                </div>
+                <div class="v-dot"></div>
+            </div>
 
-            <p>Student Coordinator: Your Name</p>
-            <p>Phone: 9876543210</p>
-            <p>Email: example@email.com</p>
+            <div class="v-item right" onclick="showSchedule('logic')">
+                <div class="v-dot"></div>
+                <div class="v-card">
+                    <span class="v-time">12:00 PM</span>
+                    <h4>Logic Design</h4>
+                    <p>Digital circuit challenges</p>
+                </div>
+            </div>
+
+            <div class="v-item left lunch-item" onclick="showSchedule('lunch')">
+                <div class="v-card lunch-card">
+                    <span class="v-time">01:00 PM</span>
+                    <h4><i class="fa-solid fa-utensils"></i> Lunch Break</h4>
+                    <p>Refreshments provided</p>
+                </div>
+                <div class="v-dot lunch-dot"></div>
+            </div>
+
+            <div class="v-item right" onclick="showSchedule('circuit')">
+                <div class="v-dot"></div>
+                <div class="v-card">
+                    <span class="v-time">02:00 PM</span>
+                    <h4>Circuit Debugging</h4>
+                    <p>Identify faults in circuits</p>
+                </div>
+            </div>
+
+            <div class="v-item left" onclick="showSchedule('jam')">
+                <div class="v-card">
+                    <span class="v-time">03:00 PM</span>
+                    <h4>JAM</h4>
+                    <p>Just A Minute – speak and win</p>
+                </div>
+                <div class="v-dot"></div>
+            </div>
+
+            <div class="v-item right" onclick="showSchedule('movie')">
+                <div class="v-dot"></div>
+                <div class="v-card">
+                    <span class="v-time">03:30 PM</span>
+                    <h4>Movie Quiz</h4>
+                    <p>Lights, camera, action!</p>
+                </div>
+            </div>
+
+            <div class="v-item left" onclick="showSchedule('connection')">
+                <div class="v-card">
+                    <span class="v-time">04:00 PM</span>
+                    <h4>Connections</h4>
+                    <p>Find the common link</p>
+                </div>
+                <div class="v-dot"></div>
+            </div>
 
         </div>
 
+        <!-- Schedule detail popup panel -->
+        <div id="schedulePanel" class="schedule-panel" style="display:none">
+            <h3 id="scheduleTitle"></h3>
+            <p id="scheduleDescription"></p>
+            <button onclick="document.getElementById('schedulePanel').style.display='none'"
+                class="close-schedule-btn">Close</button>
+        </div>
     </section>
 
+    <!-- ===== GALLERY ===== -->
+    <section id="gallery">
+        <h2 class="section-title">Gallery</h2>
+        <div class="gallery-wrapper">
+            <div class="gallery-slider">
+                <img src="gallery/img1.jpg" alt="Gallery 1">
+                <img src="gallery/img2.jpg" alt="Gallery 2">
+                <img src="gallery/img3.jpg" alt="Gallery 3">
+                <img src="gallery/img4.jpg" alt="Gallery 4">
+                <img src="gallery/img5.jpg" alt="Gallery 5">
+                <img src="gallery/img6.jpg" alt="Gallery 6">
+                <img src="gallery/img7.jpg" alt="Gallery 7">
+                <img src="gallery/img8.jpg" alt="Gallery 8">
+                <img src="gallery/img9.jpg" alt="Gallery 9">
+                <img src="gallery/img10.jpg" alt="Gallery 10">
+                <img src="gallery/img11.jpg" alt="Gallery 11">
+                <img src="gallery/img12.jpg" alt="Gallery 12">
+                <img src="gallery/img13.jpg" alt="Gallery 13">
+                <img src="gallery/img14.jpg" alt="Gallery 14">
+                <img src="gallery/img15.jpg" alt="Gallery 15">
+                <img src="gallery/img16.jpg" alt="Gallery 16">
+                <img src="gallery/img17.jpg" alt="Gallery 17">
+            </div>
+        </div>
+    </section>
 
-    <footer>
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Get in <span>Touch</span></h2>
+        <p class="contact-desc">Have questions? Our team is here to help you navigate through the innovation journey.
+        </p>
 
-        <p>© GYAAN 2K26 | ECE Department | JJ College of Engineering and Technology</p>
+        <div class="contact-container">
+            <div class="contact-card">
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <h4>xxxxxxxx</h4>
+                        <p>yyyyyyyyyyyy</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <h4>xxxxxxxxxx</h4>
+                        <p>yyyyyyyyy</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>gyaan.techfest@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h4>Location</h4>
+                        <p>JJ College of Engineering and Technology, Trichy</p>
+                    </div>
+                </div>
+            </div>
 
+            <div class="social-card">
+                <h3>Follow the Journey</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/_.gyaan_ece_?igsh=MWs2bGdnZG1sc3hjYQ==" class="social-link"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="mailto:gyaan.techfest@gmail.com" class="social-link"><i
+                            class="fa-solid fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/school/15120055/admin/dashboard" class="social-link"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <div class="quote-box">
+                    <p>"Innovation distinguishes between a leader and a follower."</p>
+                    <span>— Steve Jobs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <h2>Ready to Join GYAAN 2K26?</h2>
+        <p>Limited slots – register before they fill up!</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdh4KCxBIH31-EjtN57LLizyIR3V3qj7xwVpzeB7a7fGOLzjw/viewform?usp=publish-editor"
+            class="register-btn" target="_blank">
+            <i class="fa-solid fa-rocket"></i> Register Now
+        </a>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <h3>GYAAN 2K26</h3>
+        <p>National Level Technical Symposium<br>
+            Department of Electronics and Communication Engineering<br>
+            JJ College of Engineering and Technology, Trichy</p>
+        <p class="footer-small">© 2026 GYAAN Symposium | All Rights Reserved</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- BACK TO TOP -->
+    <button id="topBtn" title="Back to Top">↑</button>
 
-    <button id="topBtn">↑</button>
+    <script src="script.js"></script>
 </body>
 
 </html>

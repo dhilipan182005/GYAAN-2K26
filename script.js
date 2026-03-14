@@ -1,526 +1,488 @@
-// ================= LOADER =================
+/* ========================================
+   GYAAN 2K26 – Master JavaScript
+   ======================================== */
+
+// ===== LOADER =====
 document.addEventListener("DOMContentLoaded", function () {
-
     setTimeout(function () {
-
         const loader = document.getElementById("loader");
-
         if (loader) {
-            loader.style.display = "none";
+            loader.classList.add("hidden");
+            // Remove from DOM after fade completes
+            setTimeout(() => { loader.style.display = "none"; }, 700);
         }
-
-    }, 2000);
-
+    }, 2200);
 });
 
-
-// ================= EVENT POPUP =================
-function openEvent(event) {
-
-    let data = {}
-
-    // PAPER PRESENTATION
-    if (event == "paper") {
-        data = {
-            title: "Paper Presentation",
-            type: "Technical Event",
-            desc: "Participants present innovative research ideas related to Electronics and Communication Engineering.",
-
-            venue: "Seminar Hall",
-            time: "09:45 AM – 11:00 AM",
-            team: "1 - 2 Members",
-            duration: "7 Minutes",
-
-            handler: "Dr. N. L. Venkataraman",
-            contact: "9876543210",
-
-            rules: [
-                "Maximum 2 members per team",
-                "PPT presentation required",
-                "Time limit: 7 minutes",
-                "Topics must be related to ECE"
-            ],
-
-            image: "images/paper.jpg"
-        }
+// ===== MOBILE MENU TOGGLE =====
+function toggleMenu() {
+    const nav = document.getElementById("mainNav");
+    const toggle = document.getElementById("menuToggle");
+    if (nav) {
+        nav.classList.toggle("open");
+        toggle.classList.toggle("active");
     }
-
-    // TECHNICAL QUIZ
-    if (event == "quiz") {
-        data = {
-            title: "Technical Quiz",
-            type: "Technical Event",
-            desc: "Quiz covering electronics, communication systems, and engineering fundamentals.",
-
-            venue: "ECE Classroom",
-            time: "11:15 AM – 12:00 PM",
-            team: "2 Members",
-            duration: "45 Minutes",
-
-            handler: "Faculty Coordinator",
-            contact: "9876543210",
-
-            rules: [
-                "Two members per team",
-                "Multiple rounds will be conducted",
-                "Quiz master's decision is final"
-            ],
-
-            image: "images/quiz.jpg"
-        }
-    }
-
-    // LOGIC DESIGN
-    if (event == "logic") {
-        data = {
-            title: "Logic Design",
-            type: "Technical Event",
-            desc: "Solve digital logic problems and implement circuits using Boolean logic.",
-
-            venue: "Digital Lab",
-            time: "12:00 PM – 01:00 PM",
-            team: "1 Member",
-            duration: "60 Minutes",
-
-            handler: "Faculty Coordinator",
-            contact: "9876543210",
-
-            rules: [
-                "Individual participation",
-                "Questions based on digital logic",
-                "Time based challenge"
-            ],
-
-            image: "images/logic.jpg"
-        }
-    }
-
-    // CIRCUIT DEBUGGING
-    if (event == "circuit") {
-        data = {
-            title: "Circuit Debugging",
-            type: "Technical Event",
-            desc: "Identify faults in given circuits and fix them correctly within time.",
-
-            venue: "ECE Lab",
-            time: "02:00 PM – 03:00 PM",
-            team: "1 - 2 Members",
-            duration: "60 Minutes",
-
-            handler: "Faculty Coordinator",
-            contact: "9876543210",
-
-            rules: [
-                "Find faults in the circuit",
-                "Limited tools provided",
-                "Fastest correct solution wins"
-            ],
-
-            image: "images/circuit.jpg"
-        }
-    }
-
-    // MOVIE QUIZ
-    if (event == "movie") {
-        data = {
-            title: "Movie Quiz",
-            type: "Non Technical Event",
-            desc: "Fun quiz based on popular movies and entertainment.",
-
-            venue: "Seminar Hall",
-            time: "03:30 PM – 04:00 PM",
-            team: "2 Members",
-            duration: "30 Minutes",
-
-            handler: "Student Coordinator",
-            contact: "9876543210",
-
-            rules: [
-                "Two members per team",
-                "Multiple entertainment rounds",
-                "No mobile phones allowed"
-            ],
-
-            image: "images/movie.jpg"
-        }
-    }
-
-    // JAM
-    if (event == "jam") {
-        data = {
-            title: "JAM (Just A Minute)",
-            type: "Non Technical Event",
-            desc: "Speak for one minute on a topic without hesitation, repetition or deviation.",
-
-            venue: "Seminar Hall",
-            time: "03:00 PM – 03:30 PM",
-            team: "Individual",
-            duration: "1 Minute per participant",
-
-            handler: "Student Coordinator",
-            contact: "9876543210",
-
-            rules: [
-                "No hesitation",
-                "No repetition",
-                "No deviation from topic"
-            ],
-
-            image: "images/jam.jpg"
-        }
-    }
-
-    // CONNECTIONS
-    if (event == "connection") {
-        data = {
-            title: "Connections",
-            type: "Non Technical Event",
-            desc: "Find the common connection between given clues.",
-
-            venue: "ECE Classroom",
-            time: "04:00 PM – 04:30 PM",
-            team: "2 Members",
-            duration: "30 Minutes",
-
-            handler: "Student Coordinator",
-            contact: "9876543210",
-
-            rules: [
-                "Guess the common link",
-                "Multiple clue rounds",
-                "Fastest correct answer wins"
-            ],
-
-            image: "images/connection.jpg"
-        }
-    }
-
-    // ================= ASSIGN DATA TO MODAL =================
-
-    document.getElementById("eventTitle").innerText = data.title
-    document.getElementById("eventType").innerText = data.type
-    document.getElementById("eventDescription").innerText = data.desc
-
-    document.getElementById("eventVenue").innerText = data.venue
-    document.getElementById("eventTime").innerText = data.time
-    document.getElementById("eventTeam").innerText = data.team
-    document.getElementById("eventDuration").innerText = data.duration
-    document.getElementById("eventHandler").innerText = data.handler
-    document.getElementById("eventContact").innerText = data.contact
-
-    // RULES LIST
-    let rulesHTML = ""
-    data.rules.forEach(rule => {
-        rulesHTML += `<li>${rule}</li>`
-    })
-
-    document.getElementById("eventRules").innerHTML = rulesHTML
-
-    // BACKGROUND IMAGE
-    const modal = document.getElementById("eventModal")
-    modal.style.backgroundImage = `url(${data.image})`
-    modal.style.display = "flex"
-    document.body.style.overflow = "hidden"
 }
 
+// Close menu when a link is clicked
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("nav a").forEach(a => {
+        a.addEventListener("click", () => {
+            const nav = document.getElementById("mainNav");
+            nav && nav.classList.remove("open");
+        });
+    });
+});
 
-function closeEvent() {
-    document.getElementById("eventModal").style.display = "none"
-    document.body.style.overflow = "auto"
-}
-
-
-// ================= BACK TO TOP =================
+// ===== BACK TO TOP =====
 window.addEventListener("scroll", function () {
-
     const btn = document.getElementById("topBtn");
-
     if (!btn) return;
-
-    if (document.documentElement.scrollTop > 200) {
-        btn.style.display = "block";
-    } else {
-        btn.style.display = "none";
-    }
-
+    btn.style.display = document.documentElement.scrollTop > 250 ? "flex" : "none";
 });
 
 const topButton = document.getElementById("topBtn");
-
 if (topButton) {
     topButton.onclick = function () {
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
 }
 
-
-// ================= SCROLL REVEAL =================
-if (typeof ScrollReveal !== "undefined") {
-
-    ScrollReveal().reveal('.section-title', {
-        distance: '60px',
-        duration: 1200,
-        origin: 'bottom',
-        interval: 200
-    });
-
-    ScrollReveal().reveal('.card', {
-        distance: '40px',
-        duration: 1000,
-        origin: 'bottom',
-        interval: 200
-    });
-
-}
-
-
-// ================= HERO TECH BACKGROUND =================
-const techCanvas = document.getElementById("techBackground");
-
-if (techCanvas) {
-
-    const ctx = techCanvas.getContext("2d");
-
-    techCanvas.width = window.innerWidth;
-    techCanvas.height = window.innerHeight;
-
-    let particles = [];
-
-    for (let i = 0; i < 120; i++) {
-        particles.push({
-            x: Math.random() * techCanvas.width,
-            y: Math.random() * techCanvas.height,
-            vx: (Math.random() - 0.5) * 0.7,
-            vy: (Math.random() - 0.5) * 0.7,
-            size: Math.random() * 2
-        });
-    }
-
-    function animateBackground() {
-
-        ctx.clearRect(0, 0, techCanvas.width, techCanvas.height);
-
-        for (let i = 0; i < particles.length; i++) {
-
-            let p = particles[i];
-
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-            ctx.fillStyle = "#00eaff";
-            ctx.fill();
-
-            for (let j = i + 1; j < particles.length; j++) {
-
-                let p2 = particles[j];
-                let dist = Math.hypot(p.x - p2.x, p.y - p2.y);
-
-                if (dist < 130) {
-
-                    ctx.beginPath();
-                    ctx.moveTo(p.x, p.y);
-                    ctx.lineTo(p2.x, p2.y);
-                    ctx.strokeStyle = "rgba(0,234,255,0.15)";
-                    ctx.stroke();
-
-                }
-
-            }
-
-            p.x += p.vx;
-            p.y += p.vy;
-
-            if (p.x < 0 || p.x > techCanvas.width) p.vx *= -1;
-            if (p.y < 0 || p.y > techCanvas.height) p.vy *= -1;
-
-        }
-
-        requestAnimationFrame(animateBackground);
-
-    }
-
-    animateBackground();
-
-    window.addEventListener("resize", () => {
-        techCanvas.width = window.innerWidth;
-        techCanvas.height = window.innerHeight;
-    });
-
-}
-
-
-// ================= CIRCUIT BACKGROUND =================
-const circuitCanvas = document.getElementById("circuitCanvas");
-
-if (circuitCanvas) {
-
-    const ctx = circuitCanvas.getContext("2d");
-
-    circuitCanvas.width = window.innerWidth;
-    circuitCanvas.height = window.innerHeight;
-
-    let nodes = [];
-
-    for (let i = 0; i < 40; i++) {
-        nodes.push({
-            x: Math.random() * circuitCanvas.width,
-            y: Math.random() * circuitCanvas.height,
-            vx: (Math.random() - 0.5) * 0.5,
-            vy: (Math.random() - 0.5) * 0.5
-        });
-    }
-
-    function drawCircuit() {
-
-        ctx.clearRect(0, 0, circuitCanvas.width, circuitCanvas.height);
-
-        for (let i = 0; i < nodes.length; i++) {
-
-            let n = nodes[i];
-
-            ctx.beginPath();
-            ctx.arc(n.x, n.y, 2, 0, Math.PI * 2);
-            ctx.fillStyle = "#00eaff";
-            ctx.fill();
-
-            for (let j = i + 1; j < nodes.length; j++) {
-
-                let m = nodes[j];
-                let dist = Math.hypot(n.x - m.x, n.y - m.y);
-
-                if (dist < 150) {
-
-                    ctx.beginPath();
-                    ctx.moveTo(n.x, n.y);
-                    ctx.lineTo(m.x, m.y);
-                    ctx.strokeStyle = "rgba(0,234,255,0.2)";
-                    ctx.stroke();
-
-                }
-
-            }
-
-            n.x += n.vx;
-            n.y += n.vy;
-
-            if (n.x < 0 || n.x > circuitCanvas.width) n.vx *= -1;
-            if (n.y < 0 || n.y > circuitCanvas.height) n.vy *= -1;
-
-        }
-
-        requestAnimationFrame(drawCircuit);
-
-    }
-
-    drawCircuit();
-
-}
-
-/* ===== 3D CARD TILT ===== */
-
-const cards = document.querySelectorAll(".profile-card");
-
-cards.forEach(card => {
-
-    card.addEventListener("mousemove", e => {
-
-        const rect = card.getBoundingClientRect();
-
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX = (y - centerY) / 10;
-        const rotateY = (centerX - x) / 10;
-
-        card.style.transform =
-            `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-
-    });
-
-    card.addEventListener("mouseleave", () => {
-        card.style.transform = "rotateX(0) rotateY(0)";
-    });
-
+// ===== SCROLL PROGRESS BAR =====
+window.addEventListener("scroll", () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    const bar = document.getElementById("scrollBar");
+    if (bar) bar.style.width = scrolled + "%";
 });
 
-/* ===== ELECTRONICS GRID BACKGROUND ===== */
-
-const gridCanvas = document.getElementById("gridCanvas");
-
-if (gridCanvas) {
-
-    const ctx = gridCanvas.getContext("2d");
-
-    gridCanvas.width = window.innerWidth;
-    gridCanvas.height = window.innerHeight * 0.6;
-
-    let offset = 0;
-
-    function drawGrid() {
-
-        ctx.clearRect(0, 0, gridCanvas.width, gridCanvas.height);
-
-        ctx.strokeStyle = "rgba(0,234,255,0.4)";
-        ctx.lineWidth = 1;
-
-        let spacing = 40;
-
-        for (let x = 0; x < gridCanvas.width; x += spacing) {
-
-            ctx.beginPath();
-            ctx.moveTo(x, 0);
-            ctx.lineTo(x, gridCanvas.height);
-            ctx.stroke();
-
+// ===== SECTION REVEAL ON SCROLL =====
+window.addEventListener("scroll", () => {
+    document.querySelectorAll("section").forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 80) {
+            sec.classList.add("visible");
         }
-
-        for (let y = 0; y < gridCanvas.height; y += spacing) {
-
-            ctx.beginPath();
-            ctx.moveTo(0, y + offset);
-            ctx.lineTo(gridCanvas.width, y + offset);
-            ctx.stroke();
-
-        }
-
-        offset += 0.4;
-
-        if (offset > spacing) {
-            offset = 0;
-        }
-
-        requestAnimationFrame(drawGrid);
-
-    }
-
-    drawGrid();
-
-    window.addEventListener("resize", () => {
-
-        gridCanvas.width = window.innerWidth;
-        gridCanvas.height = window.innerHeight * 0.6;
-
     });
+});
 
+// Run once on load
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("section").forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight) sec.classList.add("visible");
+    });
+});
+
+// ===== HERO PARALLAX =====
+window.addEventListener("scroll", () => {
+    const hero = document.querySelector(".hero");
+    if (hero) {
+        hero.style.backgroundPositionY = window.scrollY * 0.4 + "px";
+    }
+});
+
+// ===== HERO TYPING EFFECT =====
+const words = [
+    "National Level Technical Symposium",
+    "ECE Department – JJ College",
+    "Trichy, Tamil Nadu",
+    "Innovate • Compete • Collaborate"
+];
+
+let wordIndex = 0, charIndex = 0, isDeleting = false;
+const typedEl = document.getElementById("typed");
+
+function typeEffect() {
+    if (!typedEl) return;
+    const currentWord = words[wordIndex];
+    typedEl.textContent = isDeleting
+        ? currentWord.substring(0, charIndex--)
+        : currentWord.substring(0, charIndex++);
+
+    if (!isDeleting && charIndex === currentWord.length + 1) {
+        isDeleting = true;
+        setTimeout(typeEffect, 1600);
+        return;
+    }
+    if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+    }
+    setTimeout(typeEffect, isDeleting ? 45 : 85);
 }
 
-/* ===== COUNTDOWN ===== */
+typeEffect();
 
+// ===== COUNTDOWN TIMER =====
 const eventDate = new Date("April 12, 2026 09:00:00").getTime();
 
 setInterval(function () {
-
     const now = new Date().getTime();
     const distance = eventDate - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    if (distance < 0) {
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        return;
+    }
 
-    document.getElementById("days").innerText = days;
-    document.getElementById("hours").innerText = hours;
-    document.getElementById("minutes").innerText = minutes;
-
+    document.getElementById("days").innerText    = Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerText   = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 }, 1000);
+
+// ===== PARTICLE BACKGROUND =====
+const canvas = document.getElementById("techBackground");
+
+if (canvas) {
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particles = [];
+    let mouse = { x: null, y: null };
+
+    window.addEventListener("mousemove", e => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    });
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 1.5 + 1;
+            this.speedX = (Math.random() - 0.5) * 0.55;
+            this.speedY = (Math.random() - 0.5) * 0.55;
+        }
+
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+
+            if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+            if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+
+            if (mouse.x !== null) {
+                const dx = mouse.x - this.x;
+                const dy = mouse.y - this.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 110) {
+                    this.x -= dx / 22;
+                    this.y -= dy / 22;
+                }
+            }
+        }
+
+        draw() {
+            ctx.fillStyle = "rgba(0, 234, 255, 0.8)";
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+
+    function connect() {
+        for (let a = 0; a < particles.length; a++) {
+            for (let b = a + 1; b < particles.length; b++) {
+                const dx = particles[a].x - particles[b].x;
+                const dy = particles[a].y - particles[b].y;
+                const dist = dx * dx + dy * dy;
+                if (dist < 9000) {
+                    ctx.strokeStyle = "rgba(0, 234, 255, 0.12)";
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(particles[a].x, particles[a].y);
+                    ctx.lineTo(particles[b].x, particles[b].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    function initParticles() {
+        particles = [];
+        for (let i = 0; i < 80; i++) particles.push(new Particle());
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => { p.update(); p.draw(); });
+        connect();
+        requestAnimationFrame(animate);
+    }
+
+    initParticles();
+    animate();
+
+    window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        initParticles();
+    });
+}
+
+// ===== COUNTER ANIMATION =====
+const counters = document.querySelectorAll(".counter");
+let countersStarted = false;
+
+function startCounters() {
+    if (countersStarted) return;
+    countersStarted = true;
+    counters.forEach(counter => {
+        const target = +counter.getAttribute("data-target");
+        const speed = 200;
+        const inc = target / speed;
+        let count = 0;
+        const update = () => {
+            count = Math.min(count + inc, target);
+            counter.innerText = Math.ceil(count);
+            if (count < target) setTimeout(update, 20);
+            else counter.innerText = target;
+        };
+        update();
+    });
+}
+
+const highlightsSection = document.querySelector(".highlights-section");
+if (highlightsSection) {
+    const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+            startCounters();
+            obs.disconnect();
+        }
+    }, { threshold: 0.2 });
+    obs.observe(highlightsSection);
+}
+
+// ===== EVENT HOVER RADIAL =====
+document.querySelectorAll(".event-card").forEach(card => {
+    card.addEventListener("mousemove", e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(0,234,255,.12), transparent 65%)`;
+    });
+    card.addEventListener("mouseleave", () => {
+        card.style.background = "";
+    });
+});
+
+// ===== 3D CARD TILT =====
+document.querySelectorAll(".profile-card").forEach(card => {
+    card.addEventListener("mousemove", e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const cx = rect.width / 2;
+        const cy = rect.height / 2;
+        card.style.transform = `rotateX(${(y - cy) / 12}deg) rotateY(${(cx - x) / 12}deg) translateY(-6px)`;
+    });
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "";
+    });
+});
+
+// ===== UNIFIED SLIDER FUNCTION =====
+function scrollSlider(sliderId, direction) {
+    const slider = document.getElementById(sliderId);
+    if (slider) {
+        slider.scrollBy({ left: direction * 240, behavior: "smooth" });
+    }
+}
+
+// Legacy aliases for compatibility
+function scrollLeftFaculty()  { scrollSlider("facultySlider", -1); }
+function scrollRightFaculty() { scrollSlider("facultySlider",  1); }
+function scrollLeftStudent()  { scrollSlider("studentSlider", -1); }
+function scrollRightStudent() { scrollSlider("studentSlider",  1); }
+
+// ===== POSTER VIEWER =====
+document.addEventListener("DOMContentLoaded", () => {
+    const poster = document.querySelector(".poster-image");
+    const modal  = document.getElementById("posterModal");
+    const full   = document.getElementById("posterFull");
+    const close  = document.querySelector(".poster-close");
+
+    if (poster && modal && full) {
+        poster.onclick = () => {
+            full.src = poster.src;
+            modal.style.display = "flex";
+            document.body.style.overflow = "hidden";
+        };
+    }
+
+    if (close && modal) {
+        close.onclick = () => {
+            modal.style.display = "none";
+            document.body.style.overflow = "";
+        };
+    }
+
+    if (modal) {
+        modal.addEventListener("click", e => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "";
+            }
+        });
+    }
+});
+
+// ===== EVENT POPUP MODAL =====
+const eventData = {
+    paper: {
+        title: "Paper Presentation",
+        type: "Technical Event",
+        desc: "Participants present innovative research ideas related to Electronics and Communication Engineering.",
+        venue: "Seminar Hall", time: "09:45 AM – 11:00 AM", team: "1–2 Members", duration: "7 Minutes",
+        handler: "Dr. N. L. Venkataraman", contact: "9876543210",
+        rules: ["Maximum 2 members per team", "PPT presentation required", "Time limit: 7 minutes", "Topics must be ECE-related"],
+        image: "images/paper.jpg"
+    },
+    quiz: {
+        title: "Technical Quiz",
+        type: "Technical Event",
+        desc: "Quiz covering electronics, communication systems, and engineering fundamentals.",
+        venue: "ECE Classroom", time: "11:15 AM – 12:00 PM", team: "2 Members", duration: "45 Minutes",
+        handler: "Faculty Coordinator", contact: "9876543210",
+        rules: ["Two members per team", "Multiple rounds will be conducted", "Quiz master's decision is final"],
+        image: "images/quiz.jpg"
+    },
+    logic: {
+        title: "Logic Design",
+        type: "Technical Event",
+        desc: "Solve digital logic problems and implement circuits using Boolean algebra and truth tables.",
+        venue: "Digital Lab", time: "12:00 PM – 01:00 PM", team: "1 Member", duration: "60 Minutes",
+        handler: "Faculty Coordinator", contact: "9876543210",
+        rules: ["Individual participation", "Questions based on digital logic", "Time-based scoring"],
+        image: "images/logic.jpg"
+    },
+    circuit: {
+        title: "Circuit Debugging",
+        type: "Technical Event",
+        desc: "Identify faults in given circuits and fix them correctly within the time limit.",
+        venue: "ECE Lab", time: "02:00 PM – 03:00 PM", team: "1–2 Members", duration: "60 Minutes",
+        handler: "Faculty Coordinator", contact: "9876543210",
+        rules: ["Find faults in the given circuit", "Limited tools provided", "Fastest correct solution wins"],
+        image: "images/circuit.jpg"
+    },
+    movie: {
+        title: "Movie Quiz",
+        type: "Non-Technical Event",
+        desc: "A fun quiz based on popular movies, dialogues, and entertainment.",
+        venue: "Seminar Hall", time: "03:30 PM – 04:00 PM", team: "2 Members", duration: "30 Minutes",
+        handler: "Student Coordinator", contact: "9876543210",
+        rules: ["Two members per team", "Multiple entertainment rounds", "No mobile phones allowed"],
+        image: "images/movie.jpg"
+    },
+    jam: {
+        title: "JAM (Just A Minute)",
+        type: "Non-Technical Event",
+        desc: "Speak for one minute on a given topic without hesitation, repetition or deviation.",
+        venue: "Seminar Hall", time: "03:00 PM – 03:30 PM", team: "Individual", duration: "1 Minute per participant",
+        handler: "Student Coordinator", contact: "9876543210",
+        rules: ["No hesitation allowed", "No repetition of words", "No deviation from the topic"],
+        image: "images/jam.jpg"
+    },
+    connection: {
+        title: "Connections",
+        type: "Non-Technical Event",
+        desc: "Find the common connection between given clues – fastest correct answer wins!",
+        venue: "ECE Classroom", time: "04:00 PM – 04:30 PM", team: "2 Members", duration: "30 Minutes",
+        handler: "Student Coordinator", contact: "9876543210",
+        rules: ["Guess the common link between clues", "Multiple clue rounds", "Fastest correct answer wins"],
+        image: "images/connection.jpg"
+    }
+};
+
+function openEvent(key) {
+    const data = eventData[key];
+    if (!data) return;
+
+    document.getElementById("eventTitle").innerText       = data.title;
+    document.getElementById("eventType").innerText        = data.type;
+    document.getElementById("eventDescription").innerText = data.desc;
+    document.getElementById("eventVenue").innerText       = data.venue;
+    document.getElementById("eventTime").innerText        = data.time;
+    document.getElementById("eventTeam").innerText        = data.team;
+    document.getElementById("eventDuration").innerText    = data.duration;
+    document.getElementById("eventHandler").innerText     = data.handler;
+    document.getElementById("eventContact").innerText     = data.contact;
+
+    document.getElementById("eventRules").innerHTML =
+        data.rules.map(r => `<li>${r}</li>`).join("");
+
+    const modal = document.getElementById("eventModal");
+    modal.style.backgroundImage = `url(${data.image})`;
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+function closeEvent() {
+    const modal = document.getElementById("eventModal");
+    if (modal) modal.style.display = "none";
+    document.body.style.overflow = "";
+}
+
+// Close modal on backdrop click
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("eventModal");
+    if (modal) {
+        modal.addEventListener("click", e => {
+            if (e.target === modal) closeEvent();
+        });
+    }
+});
+
+// ===== SCHEDULE =====
+const scheduleData = {
+    welcome:    { title: "Welcome Address",    desc: "Opening ceremony of GYAAN 2K26 with welcome speech and event introduction." },
+    paper:      { title: "Paper Presentation", desc: "Participants present innovative research ideas related to Electronics and Communication Engineering." },
+    quiz:       { title: "Technical Quiz",     desc: "A quiz competition testing knowledge in electronics, communication, and core engineering concepts." },
+    logic:      { title: "Logic Design",       desc: "Participants solve digital logic problems and design circuits within the time limit." },
+    lunch:      { title: "Lunch Break",        desc: "Lunch will be provided for all registered participants and staff." },
+    circuit:    { title: "Circuit Debugging",  desc: "Identify faults in given circuits and correct them within the time limit." },
+    jam:        { title: "JAM (Just A Minute)", desc: "Participants speak on a random topic for one minute without hesitation, repetition, or deviation." },
+    movie:      { title: "Movie Quiz",         desc: "Fun quiz based on popular movies, dialogues, and entertainment categories." },
+    connection: { title: "Connections",        desc: "Find the common link between the given clues – multiple rounds with increasing difficulty." }
+};
+
+function showSchedule(key) {
+    const d = scheduleData[key];
+    if (!d) return;
+    const panel = document.getElementById("schedulePanel");
+    document.getElementById("scheduleTitle").innerText      = d.title;
+    document.getElementById("scheduleDescription").innerText = d.desc;
+    if (panel) {
+        panel.style.display = "block";
+        panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+}
+
+// ===== CONTACT MODAL =====
+function openContact(name, phone, email) {
+    document.getElementById("contactModal").style.display = "flex";
+    document.getElementById("contactName").innerText  = name;
+    document.getElementById("contactPhone").innerText = phone;
+    document.getElementById("contactEmail").innerText = email;
+    document.body.style.overflow = "hidden";
+}
+
+function closeModal() {
+    const m = document.getElementById("contactModal");
+    if (m) m.style.display = "none";
+    document.body.style.overflow = "";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cm = document.getElementById("contactModal");
+    if (cm) {
+        cm.addEventListener("click", e => {
+            if (e.target === cm) closeModal();
+        });
+    }
+});
