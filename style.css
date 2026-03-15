@@ -233,20 +233,64 @@ nav a:hover::after {
 }
 
 /* HERO LOGO FIXED SIZE */
+/* JJ COLLEGE LOGO FIX */
+
 .hero-logo {
 
     display: block;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 25px auto;
 
-    max-width: 200px;
+    /* increase logo size */
+    max-width: 260px;
     width: 100%;
     height: auto;
 
     object-fit: contain;
 
-    filter: drop-shadow(0 0 12px rgba(0, 234, 255, 0.6));
+    /* keep it fixed (no animation) */
+    animation: none;
+
+    /* clean tech glow */
+    filter: drop-shadow(0 0 18px rgba(0, 234, 255, .7));
+
+    transition: transform .3s ease;
 
 }
+
+/* small hover highlight */
+
+.hero-logo:hover {
+    transform: scale(1.05);
+}
+
+/* hover effect */
+
+.hero-logo:hover {
+
+    transform: scale(1.08);
+
+    filter: drop-shadow(0 0 25px rgba(0, 234, 255, .9)) drop-shadow(0 0 50px rgba(0, 234, 255, .5));
+
+}
+
+/* floating animation */
+
+@keyframes logoFloat {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
+}
+
 
 .hero-logo img {
 
@@ -308,24 +352,114 @@ nav a:hover::after {
     margin-bottom: 10px;
 }
 
+.hero-content {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    max-width: 900px;
+    margin: auto;
+
+}
+
 .hero-title {
-    font-size: 72px;
+
+    font-size: clamp(40px, 7vw, 80px);
+
     color: #00eaff;
-    text-shadow: 0 0 15px #00eaff, 0 0 35px #00eaff, 0 0 70px rgba(0, 234, 255, .4);
+
+    text-shadow:
+        0 0 10px #00eaff,
+        0 0 25px #00eaff,
+        0 0 50px rgba(0, 234, 255, .6);
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+
+}
+
+/* HERO TITLE UNIQUE DESIGN */
+
+.hero-title-wrapper {
     position: relative;
-    z-index: 2;
+    display: inline-block;
+}
+
+.hero-title {
+
+    font-size: clamp(42px, 8vw, 85px);
+    font-weight: 800;
     letter-spacing: 4px;
+
+    background: linear-gradient(90deg,
+            #00eaff,
+            #ffffff,
+            #00eaff);
+
+    background-size: 200% auto;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 8px rgba(0, 234, 255, .6),
+        0 0 25px rgba(0, 234, 255, .6),
+        0 0 60px rgba(0, 234, 255, .4);
+
+    animation: titleShine 6s linear infinite;
+
+}
+
+/* Shine animation */
+
+@keyframes titleShine {
+
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+
 }
 
 .hero-glow {
+
     position: absolute;
-    inset: -50%;
-    left: -80px;
-    right: -80px;
-    background: radial-gradient(circle, rgba(0, 234, 255, .35), transparent 65%);
-    filter: blur(40px);
-    z-index: 1;
-    animation: heroGlow 5s infinite alternate;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 380px;
+    height: 380px;
+
+    background: radial-gradient(circle,
+            rgba(0, 234, 255, .35),
+            transparent 70%);
+
+    filter: blur(80px);
+
+    z-index: -1;
+
+}
+
+@media (max-width:768px) {
+
+    .hero-glow {
+        width: 240px;
+        height: 240px;
+    }
+
+    .hero-title {
+        letter-spacing: 2px;
+    }
+
 }
 
 @keyframes heroGlow {
@@ -1914,7 +2048,7 @@ section.visible {
 @media (max-width:768px) {
 
     .hero-logo {
-        max-width: 130px;
+        max-width: 170px;
     }
 
 }
