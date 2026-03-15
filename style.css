@@ -232,16 +232,50 @@ nav a:hover::after {
     align-items: center;
 }
 
+/* HERO LOGO FIXED SIZE */
 .hero-logo {
-    width: clamp(140px, 18vw, 200px);
+
+    display: block;
+    margin: 0 auto 20px auto;
+
+    max-width: 200px;
+    width: 100%;
     height: auto;
-    margin-bottom: 20px;
-    filter: drop-shadow(0 0 22px rgba(0, 234, 255, 0.8)) drop-shadow(0 0 60px rgba(0, 234, 255, 0.35));
-    animation: logoPulse 3s ease-in-out infinite, fadeInDown 1s ease-out both;
-    border-radius: 8px;
-    /* Prevent layout shift by reserving space */
-    aspect-ratio: 1 / 1;
+
     object-fit: contain;
+
+    filter: drop-shadow(0 0 12px rgba(0, 234, 255, 0.6));
+
+}
+
+.hero-logo img {
+
+    width: auto;
+    max-width: 220px;
+    /* perfect default size */
+    height: auto;
+
+    object-fit: contain;
+
+    filter: drop-shadow(0 0 10px rgba(0, 234, 255, 0.5));
+
+}
+
+.hero-logo img {
+
+    height: 120px;
+    width: auto;
+
+    max-width: 100%;
+
+    object-fit: contain;
+
+    filter: drop-shadow(0 0 22px rgba(0, 234, 255, 0.8)) drop-shadow(0 0 60px rgba(0, 234, 255, 0.35));
+
+    animation: logoPulse 3s ease-in-out infinite;
+
+    border-radius: 6px;
+
 }
 
 @keyframes logoPulse {
@@ -1874,4 +1908,13 @@ section.visible {
         width: 90px;
         margin-bottom: 10px;
     }
+}
+
+/* MOBILE HERO LOGO FIX */
+@media (max-width:768px) {
+
+    .hero-logo {
+        max-width: 130px;
+    }
+
 }
