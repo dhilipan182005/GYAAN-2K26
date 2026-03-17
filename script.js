@@ -477,7 +477,7 @@ const scheduleData = {
     welcome:    { title: "Welcome Address",    desc: "Opening ceremony of GYAAN 2K26 with welcome speech and event introduction." },
     paper:      { title: "Paper Presentation", desc: "Participants present innovative research ideas related to Electronics and Communication Engineering." },
     quiz:       { title: "Technical Quiz",     desc: "A quiz competition testing knowledge in electronics, communication, and core engineering concepts." },
-    logic:      { title: "Logic Design",       desc: "Participants solve digital logic problems and design circuits within the time limit." },
+    logic:      { title: "Project Expo",       desc: "Showcase innovative projects and working prototypes." },
     lunch:      { title: "Lunch Break",        desc: "Lunch will be provided for all registered participants and staff." },
     circuit:    { title: "Circuit Debugging",  desc: "Identify faults in given circuits and correct them within the time limit." },
     jam:        { title: "JAM (Just A Minute)", desc: "Participants speak on a random topic for one minute without hesitation, repetition, or deviation." },
