@@ -339,7 +339,7 @@ const eventData = {
         type: "Technical Event",
         desc: "Participants present innovative research ideas related to Electronics and Communication Engineering.",
         venue: "Seminar Hall", time: "09:45 AM – 11:00 AM", team: "1–2 Members", duration: "7 Minutes",
-        handler: "Dr. N. L. Venkataraman", contact: "9876543210",
+        handler: "Dr. S.Sumithra", contact: "9876543210",
         rules: ["Maximum 2 members per team", "PPT presentation required", "Time limit: 7 minutes", "Topics must be ECE-related"],
         image: "images/paper.jpg"
     },
@@ -365,25 +365,16 @@ const eventData = {
         type: "Technical Event",
         desc: "Quiz covering electronics, communication systems, and engineering fundamentals.",
         venue: "ECE Classroom", time: "11:15 AM – 12:00 PM", team: "2 Members", duration: "45 Minutes",
-        handler: "Faculty Coordinator", contact: "9876543210",
+        handler: "Dr. M.Shobana", contact: "9876543210",
         rules: ["Two members per team", "Multiple rounds will be conducted", "Quiz master's decision is final"],
         image: "images/quiz.jpg"
-    },
-    logic: {
-        title: "Logic Design",
-        type: "Technical Event",
-        desc: "Solve digital logic problems and implement circuits using Boolean algebra and truth tables.",
-        venue: "Digital Lab", time: "12:00 PM – 01:00 PM", team: "1 Member", duration: "60 Minutes",
-        handler: "Faculty Coordinator", contact: "9876543210",
-        rules: ["Individual participation", "Questions based on digital logic", "Time-based scoring"],
-        image: "images/logic.jpg"
     },
     circuit: {
         title: "Circuit Debugging",
         type: "Technical Event",
         desc: "Identify faults in given circuits and fix them correctly within the time limit.",
         venue: "ECE Lab", time: "02:00 PM – 03:00 PM", team: "1–2 Members", duration: "60 Minutes",
-        handler: "Faculty Coordinator", contact: "9876543210",
+        handler: "Mrs. K.Kokulavani", contact: "9876543210",
         rules: ["Find faults in the given circuit", "Limited tools provided", "Fastest correct solution wins"],
         image: "images/circuit.jpg"
     },
@@ -409,7 +400,7 @@ const eventData = {
         type: "Non-Technical Event",
         desc: "A fun quiz based on popular movies, dialogues, and entertainment.",
         venue: "Seminar Hall", time: "03:30 PM – 04:00 PM", team: "2 Members", duration: "30 Minutes",
-        handler: "Student Coordinator", contact: "9876543210",
+        handler: "Mrs. R.Meenakshi", contact: "9876543210",
         rules: ["Two members per team", "Multiple entertainment rounds", "No mobile phones allowed"],
         image: "images/movie.jpg"
     },
@@ -418,7 +409,7 @@ const eventData = {
         type: "Non-Technical Event",
         desc: "Speak for one minute on a given topic without hesitation, repetition or deviation.",
         venue: "Seminar Hall", time: "03:00 PM – 03:30 PM", team: "Individual", duration: "1 Minute per participant",
-        handler: "Student Coordinator", contact: "9876543210",
+        handler: "Dr. M.Shobana", contact: "9876543210",
         rules: ["No hesitation allowed", "No repetition of words", "No deviation from the topic"],
         image: "images/jam.jpg"
     },
