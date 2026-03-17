@@ -19,6 +19,7 @@ body {
     background: #060a18;
     color: #fff;
     overflow-x: hidden;
+    width: 100%;
 }
 
 h1,
@@ -1275,13 +1276,16 @@ section {
     max-width: 900px;
     width: 100%;
     margin: auto;
-    background: rgba(8, 14, 38, 0.88);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(0, 234, 255, 0.22);
+    background: rgba(8, 14, 38, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 234, 255, 0.3);
     border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 0 60px rgba(0, 234, 255, 0.2);
+    padding: 25px;
+    box-shadow: 0 0 60px rgba(0, 234, 255, 0.3);
     animation: modalPop 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 @keyframes modalPop {
@@ -1347,10 +1351,24 @@ section {
 }
 
 .event-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
+    display: flex;
+    gap: 30px;
     text-align: left;
+}
+
+.event-left, .event-right {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .event-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+    }
 }
 
 .event-info-item {

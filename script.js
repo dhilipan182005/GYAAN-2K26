@@ -343,6 +343,23 @@ const eventData = {
         rules: ["Maximum 2 members per team", "PPT presentation required", "Time limit: 7 minutes", "Topics must be ECE-related"],
         image: "images/paper.jpg"
     },
+    project: {
+        title: "Project Expo",
+        type: "Technical Event",
+        desc: "Showcase innovative projects and working prototypes.",
+        venue: "Project Lab",
+        time: "02:00 PM – 04:00 PM",
+        team: "1–3 Members",
+        duration: "10 Minutes",
+        handler: "Faculty Coordinator",
+        contact: "9876543210",
+        rules: [
+            "Working model required",
+            "Clear explanation needed",
+            "Judges decision final"
+        ],
+        image: "images/project.jpg"
+    },
     quiz: {
         title: "Technical Quiz",
         type: "Technical Event",
@@ -369,6 +386,23 @@ const eventData = {
         handler: "Faculty Coordinator", contact: "9876543210",
         rules: ["Find faults in the given circuit", "Limited tools provided", "Fastest correct solution wins"],
         image: "images/circuit.jpg"
+    },
+    ipl: {
+        title: "IPL Auction",
+        type: "Non-Technical Event",
+        desc: "Strategy-based cricket auction event with live bidding.",
+        venue: "Seminar Hall",
+        time: "03:00 PM – 04:30 PM",
+        team: "3–5 Members",
+        duration: "90 Minutes",
+        handler: "Student Coordinator",
+        contact: "9876543210",
+        rules: [
+            "Budget-based selection",
+            "Live bidding rounds",
+            "Strategy matters"
+        ],
+        image: "images/ipl.jpg"
     },
     movie: {
         title: "Movie Quiz",
