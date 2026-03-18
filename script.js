@@ -129,8 +129,8 @@ setInterval(function () {
         return;
     }
 
-    document.getElementById("days").innerText    = Math.floor(distance / (1000 * 60 * 60 * 24));
-    document.getElementById("hours").innerText   = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 }, 1000);
 
@@ -295,17 +295,17 @@ function scrollSlider(sliderId, direction) {
 }
 
 // Legacy aliases for compatibility
-function scrollLeftFaculty()  { scrollSlider("facultySlider", -1); }
-function scrollRightFaculty() { scrollSlider("facultySlider",  1); }
-function scrollLeftStudent()  { scrollSlider("studentSlider", -1); }
-function scrollRightStudent() { scrollSlider("studentSlider",  1); }
+function scrollLeftFaculty() { scrollSlider("facultySlider", -1); }
+function scrollRightFaculty() { scrollSlider("facultySlider", 1); }
+function scrollLeftStudent() { scrollSlider("studentSlider", -1); }
+function scrollRightStudent() { scrollSlider("studentSlider", 1); }
 
 // ===== POSTER VIEWER =====
 document.addEventListener("DOMContentLoaded", () => {
     const poster = document.querySelector(".poster-image");
-    const modal  = document.getElementById("posterModal");
-    const full   = document.getElementById("posterFull");
-    const close  = document.querySelector(".poster-close");
+    const modal = document.getElementById("posterModal");
+    const full = document.getElementById("posterFull");
+    const close = document.querySelector(".poster-close");
 
     if (poster && modal && full) {
         poster.onclick = () => {
@@ -339,7 +339,7 @@ const eventData = {
         type: "Technical Event",
         desc: "Participants present innovative research ideas related to Electronics and Communication Engineering.",
         venue: "Seminar Hall", time: "09:45 AM – 11:00 AM", team: "1–2 Members", duration: "7 Minutes",
-        handler: "Dr. S.Sumithra", contact: "9876543210",
+        handler: "BABUNATHAN ", contact: "9789277047",
         rules: ["Maximum 2 members per team", "PPT presentation required", "Time limit: 7 minutes", "Topics must be ECE-related"],
         image: "images/paper.jpg"
     },
@@ -351,8 +351,8 @@ const eventData = {
         time: "02:00 PM – 04:00 PM",
         team: "1–3 Members",
         duration: "10 Minutes",
-        handler: "Faculty Coordinator",
-        contact: "9876543210",
+        handler: "HARSHAVARTHINI R",
+        contact: "7603858260",
         rules: [
             "Working model required",
             "Clear explanation needed",
@@ -365,16 +365,25 @@ const eventData = {
         type: "Technical Event",
         desc: "Quiz covering electronics, communication systems, and engineering fundamentals.",
         venue: "ECE Classroom", time: "11:15 AM – 12:00 PM", team: "2 Members", duration: "45 Minutes",
-        handler: "Dr. M.Shobana", contact: "9876543210",
+        handler: "SHARMITHA N", contact: "7601091655",
         rules: ["Two members per team", "Multiple rounds will be conducted", "Quiz master's decision is final"],
         image: "images/quiz.jpg"
+    },
+    logic: {
+        title: "Project Expo",
+        type: "Technical Event",
+        desc: "Solve digital logic problems and implement circuits using Boolean algebra and truth tables.",
+        venue: "Digital Lab", time: "12:00 PM – 01:00 PM", team: "1–3 Members", duration: "60 Minutes",
+        handler: "HARSHAVARTHINI R", contact: "7603858260",
+        rules: ["team participation", "Questions based on digital logic", "Time-based scoring"],
+        image: "images/logic.jpg"
     },
     circuit: {
         title: "Circuit Debugging",
         type: "Technical Event",
         desc: "Identify faults in given circuits and fix them correctly within the time limit.",
-        venue: "ECE Lab", time: "02:00 PM – 03:00 PM", team: "1–2 Members", duration: "60 Minutes",
-        handler: "Mrs. K.Kokulavani", contact: "9876543210",
+        venue: "ECE Classroom", time: "02:00 PM – 03:00 PM", team: "1–2 Members", duration: "60 Minutes",
+        handler: "ARAVINDHAN T", contact: "9585387963",
         rules: ["Find faults in the given circuit", "Limited tools provided", "Fastest correct solution wins"],
         image: "images/circuit.jpg"
     },
@@ -386,8 +395,8 @@ const eventData = {
         time: "03:00 PM – 04:30 PM",
         team: "3–5 Members",
         duration: "90 Minutes",
-        handler: "Student Coordinator",
-        contact: "9876543210",
+        handler: "KAVISH KARAN",
+        contact: "7845329171",
         rules: [
             "Budget-based selection",
             "Live bidding rounds",
@@ -399,8 +408,8 @@ const eventData = {
         title: "Movie Quiz",
         type: "Non-Technical Event",
         desc: "A fun quiz based on popular movies, dialogues, and entertainment.",
-        venue: "Seminar Hall", time: "03:30 PM – 04:00 PM", team: "2 Members", duration: "30 Minutes",
-        handler: "Mrs. R.Meenakshi", contact: "9876543210",
+        venue: "ECE Classroom", time: "03:30 PM – 04:00 PM", team: "2 Members", duration: "30 Minutes",
+        handler: "CHANDRU", contact: "9789439489",
         rules: ["Two members per team", "Multiple entertainment rounds", "No mobile phones allowed"],
         image: "images/movie.jpg"
     },
@@ -408,8 +417,8 @@ const eventData = {
         title: "JAM (Just A Minute)",
         type: "Non-Technical Event",
         desc: "Speak for one minute on a given topic without hesitation, repetition or deviation.",
-        venue: "Seminar Hall", time: "03:00 PM – 03:30 PM", team: "Individual", duration: "1 Minute per participant",
-        handler: "Dr. M.Shobana", contact: "9876543210",
+        venue: "ECE Classroom", time: "03:00 PM – 03:30 PM", team: "Individual", duration: "1 Minute per participant",
+        handler: "KANIMOZHI", contact: "8270027793",
         rules: ["No hesitation allowed", "No repetition of words", "No deviation from the topic"],
         image: "images/jam.jpg"
     },
@@ -418,7 +427,7 @@ const eventData = {
         type: "Non-Technical Event",
         desc: "Find the common connection between given clues – fastest correct answer wins!",
         venue: "ECE Classroom", time: "04:00 PM – 04:30 PM", team: "2 Members", duration: "30 Minutes",
-        handler: "Student Coordinator", contact: "9876543210",
+        handler: "HEMA SREE", contact: "9345894710",
         rules: ["Guess the common link between clues", "Multiple clue rounds", "Fastest correct answer wins"],
         image: "images/connection.jpg"
     }
@@ -428,15 +437,15 @@ function openEvent(key) {
     const data = eventData[key];
     if (!data) return;
 
-    document.getElementById("eventTitle").innerText       = data.title;
-    document.getElementById("eventType").innerText        = data.type;
+    document.getElementById("eventTitle").innerText = data.title;
+    document.getElementById("eventType").innerText = data.type;
     document.getElementById("eventDescription").innerText = data.desc;
-    document.getElementById("eventVenue").innerText       = data.venue;
-    document.getElementById("eventTime").innerText        = data.time;
-    document.getElementById("eventTeam").innerText        = data.team;
-    document.getElementById("eventDuration").innerText    = data.duration;
-    document.getElementById("eventHandler").innerText     = data.handler;
-    document.getElementById("eventContact").innerText     = data.contact;
+    document.getElementById("eventVenue").innerText = data.venue;
+    document.getElementById("eventTime").innerText = data.time;
+    document.getElementById("eventTeam").innerText = data.team;
+    document.getElementById("eventDuration").innerText = data.duration;
+    document.getElementById("eventHandler").innerText = data.handler;
+    document.getElementById("eventContact").innerText = data.contact;
 
     document.getElementById("eventRules").innerHTML =
         data.rules.map(r => `<li>${r}</li>`).join("");
@@ -465,22 +474,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ===== SCHEDULE =====
 const scheduleData = {
-    welcome:    { title: "Welcome Address",    desc: "Opening ceremony of GYAAN 2K26 with welcome speech and event introduction." },
-    paper:      { title: "Paper Presentation", desc: "Participants present innovative research ideas related to Electronics and Communication Engineering." },
-    quiz:       { title: "Technical Quiz",     desc: "A quiz competition testing knowledge in electronics, communication, and core engineering concepts." },
-    logic:      { title: "Project Expo",       desc: "Showcase innovative projects and working prototypes." },
-    lunch:      { title: "Lunch Break",        desc: "Lunch will be provided for all registered participants and staff." },
-    circuit:    { title: "Circuit Debugging",  desc: "Identify faults in given circuits and correct them within the time limit." },
-    jam:        { title: "JAM (Just A Minute)", desc: "Participants speak on a random topic for one minute without hesitation, repetition, or deviation." },
-    movie:      { title: "Movie Quiz",         desc: "Fun quiz based on popular movies, dialogues, and entertainment categories." },
-    connection: { title: "Connections",        desc: "Find the common link between the given clues – multiple rounds with increasing difficulty." }
+    welcome: { title: "Welcome Address", desc: "Opening ceremony of GYAAN 2K26 with welcome speech and event introduction." },
+    paper: { title: "Paper Presentation", desc: "Participants present innovative research ideas related to Electronics and Communication Engineering." },
+    quiz: { title: "Technical Quiz", desc: "A quiz competition testing knowledge in electronics, communication, and core engineering concepts." },
+    logic: { title: "Logic Design", desc: "Participants solve digital logic problems and design circuits within the time limit." },
+    lunch: { title: "Lunch Break", desc: "Lunch will be provided for all registered participants and staff." },
+    circuit: { title: "Circuit Debugging", desc: "Identify faults in given circuits and correct them within the time limit." },
+    jam: { title: "JAM (Just A Minute)", desc: "Participants speak on a random topic for one minute without hesitation, repetition, or deviation." },
+    movie: { title: "Movie Quiz", desc: "Fun quiz based on popular movies, dialogues, and entertainment categories." },
+    connection: { title: "Connections", desc: "Find the common link between the given clues – multiple rounds with increasing difficulty." }
 };
 
 function showSchedule(key) {
     const d = scheduleData[key];
     if (!d) return;
     const panel = document.getElementById("schedulePanel");
-    document.getElementById("scheduleTitle").innerText      = d.title;
+    document.getElementById("scheduleTitle").innerText = d.title;
     document.getElementById("scheduleDescription").innerText = d.desc;
     if (panel) {
         panel.style.display = "block";
@@ -491,7 +500,7 @@ function showSchedule(key) {
 // ===== CONTACT MODAL =====
 function openContact(name, phone, email) {
     document.getElementById("contactModal").style.display = "flex";
-    document.getElementById("contactName").innerText  = name;
+    document.getElementById("contactName").innerText = name;
     document.getElementById("contactPhone").innerText = phone;
     document.getElementById("contactEmail").innerText = email;
     document.body.style.overflow = "hidden";
