@@ -239,9 +239,9 @@ function startCounters() {
         let count = 0;
         const update = () => {
             count = Math.min(count + inc, target);
-            counter.innerText = Math.ceil(count);
+            counter.innerText = Math.ceil(count) + "+";
             if (count < target) setTimeout(update, 20);
-            else counter.innerText = target;
+            else counter.innerText = target + "+";
         };
         update();
     });
