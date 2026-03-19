@@ -116,7 +116,7 @@ function typeEffect() {
 typeEffect();
 
 // ===== COUNTDOWN TIMER =====
-const eventDate = new Date("April 12, 2026 09:00:00").getTime();
+const eventDate = new Date("April 11, 2026 09:00:00").getTime();
 
 setInterval(function () {
     const now = new Date().getTime();
